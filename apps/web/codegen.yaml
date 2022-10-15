@@ -1,0 +1,9 @@
+schema: http://127.0.0.1:1337/graphql
+# documents: './src/**/*.ts*'
+generates:
+  src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+      withHooks: true
