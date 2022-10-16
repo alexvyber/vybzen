@@ -6,6 +6,7 @@
 - modern module resolution
 - tweak configs
 - develop some kind of dev conventions
+- move to RFC layout "/app" - folder
 
 This is an official Yarn v1 starter turborepo.
 
