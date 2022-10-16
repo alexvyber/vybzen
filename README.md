@@ -1,4 +1,11 @@
-# Turborepo starter
+# Katzen Turborepo starter
+
+## TODO
+- tailwind-prettier-plugin
+- graphql client
+- modern module resolution
+- tweak configs
+- develop some kind of dev conventions
 
 This is an official Yarn v1 starter turborepo.
 
