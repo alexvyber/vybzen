@@ -1,6 +1,7 @@
 # Katzen Turborepo starter
 
 ## TODO
+
 - tailwind-prettier-plugin
 - graphql client
 - modern module resolution
