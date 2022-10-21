@@ -1,5 +1,11 @@
 # Katzen Turborepo starter
 
+
+```
+cd katzen
+nvm use
+```
+
 ## TODO
 
 - tailwind-prettier-plugin
