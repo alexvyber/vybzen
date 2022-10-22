@@ -9,10 +9,10 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "gen": "turbo run gen",
     "dev": "turbo run dev --parallel",
     "fix-lint": "cp -r apps/web/node_modules/next node_modules/next",
     "format": " rustywind --write . ; prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
+    "gen": "turbo run gen",
     "lint": "turbo run lint",
     "sort-package-json": "npx sort-package-json && npx sort-package-json apps/web/package.json && npx sort-package-json apps/cms/package.json",
     "start": "turbo run start"
