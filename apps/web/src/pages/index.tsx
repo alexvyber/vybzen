@@ -5,6 +5,18 @@ import Image from "next/future/image"
 
 const techs = ["Next", "Strapi", "TailwindCSS", "GraphQl"]
 
+import type { Post } from "generated-types"
+
+// -------------------
+
+const post: Post = {
+  title: "Some Title",
+  author: "Some Author",
+  views: 12344,
+}
+
+// -------------------
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2 bg-zinc-800">
@@ -23,7 +35,7 @@ export default function Home() {
         />
         <h1 className="mx-auto max-w-5xl text-center text-6xl font-extrabold tracking-tight text-white">
           <span className="inline-block bg-gradient-to-r from-brandmain to-brandaccent bg-clip-text text-transparent  text-7xl sm:text-9xl">
-            Katzen
+            Katzen {post.title}
           </span>
         </h1>
         <h2 className="text-3xl mt-8 text-white text-center flex gap-3 flex-wrap">

@@ -390,10 +390,13 @@ export type PaginationArg = {
 
 export type Post = {
   __typename?: "Post"
+  author?: Maybe<Scalars["String"]>
+  content?: Maybe<Scalars["String"]>
   createdAt?: Maybe<Scalars["DateTime"]>
   publishedAt?: Maybe<Scalars["DateTime"]>
   title?: Maybe<Scalars["String"]>
   updatedAt?: Maybe<Scalars["DateTime"]>
+  views?: Maybe<Scalars["Int"]>
 }
 
 export type PostEntity = {
@@ -415,6 +418,8 @@ export type PostEntityResponseCollection = {
 
 export type PostFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<PostFiltersInput>>>
+  author?: InputMaybe<StringFilterInput>
+  content?: InputMaybe<StringFilterInput>
   createdAt?: InputMaybe<DateTimeFilterInput>
   id?: InputMaybe<IdFilterInput>
   not?: InputMaybe<PostFiltersInput>
@@ -422,11 +427,15 @@ export type PostFiltersInput = {
   publishedAt?: InputMaybe<DateTimeFilterInput>
   title?: InputMaybe<StringFilterInput>
   updatedAt?: InputMaybe<DateTimeFilterInput>
+  views?: InputMaybe<IntFilterInput>
 }
 
 export type PostInput = {
+  author?: InputMaybe<Scalars["String"]>
+  content?: InputMaybe<Scalars["String"]>
   publishedAt?: InputMaybe<Scalars["DateTime"]>
   title?: InputMaybe<Scalars["String"]>
+  views?: InputMaybe<Scalars["Int"]>
 }
 
 export enum PublicationState {
