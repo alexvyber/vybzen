@@ -1,16 +1,20 @@
 {
   "name": "cms",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
   "scripts": {
+    "build": "strapi build",
+    "clean": "rm -rf dist",
     "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-graphql": "^4.4.5",
     "@strapi/plugin-i18n": "4.4.5",
@@ -18,15 +22,11 @@
     "@strapi/strapi": "4.4.5",
     "pg": "8.6.0"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "2dce5d6c-af40-476d-b02c-6eb1da8d66f2"
-  },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "2dce5d6c-af40-476d-b02c-6eb1da8d66f2"
+  }
 }

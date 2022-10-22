@@ -15,6 +15,7 @@ nvm use
 - move to RFC layout "/app" - folder
 - dark mode
 - now web uses graphql@^15 because of strapi-graphql dependent on version 15. Migrate both workspaces to graphql@^16
+- 'fix-lint' copies next folder from apps/web/node_modules to node_modules/next. FIX: this kinda should be fixed...
 
 This is an official Yarn v1 starter turborepo.
 
