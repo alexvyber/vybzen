@@ -6,6 +6,7 @@
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
+      "cache": false,
       "outputs": []
     },
     "start": {},

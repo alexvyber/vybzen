@@ -12,7 +12,7 @@
     "gen": "turbo run gen",
     "dev": "turbo run dev --parallel",
     "fix-lint": "cp -r apps/web/node_modules/next node_modules/next",
-    "format": "prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\"",
+    "format": " rustywind --write . ; prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
     "lint": "turbo run lint",
     "sort-package-json": "npx sort-package-json && npx sort-package-json apps/web/package.json && npx sort-package-json apps/cms/package.json",
     "start": "turbo run start"
@@ -20,6 +20,7 @@
   "devDependencies": {
     "eslint-config-custom": "*",
     "prettier": "latest",
+    "rustywind": "^0.15.1",
     "turbo": "latest"
   },
   "packageManager": "yarn@1.22.19",
