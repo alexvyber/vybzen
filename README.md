@@ -1,6 +1,5 @@
 # Katzen Turborepo starter
 
-
 ```
 cd katzen
 nvm use
@@ -15,6 +14,7 @@ nvm use
 - develop some kind of dev conventions
 - move to RFC layout "/app" - folder
 - dark mode
+- now web uses graphql@^15 because of strapi-graphql dependent on version 15. Migrate both workspaces to graphql@^16
 
 This is an official Yarn v1 starter turborepo.
 

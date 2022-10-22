@@ -26,10 +26,10 @@ export default function Home() {
             Katzen
           </span>
         </h1>
-        <h2 className="text-3xl mt-8 text-white text-center ">
+        <h2 className="text-3xl mt-8 text-white text-center flex gap-3 flex-wrap">
           {techs.map((item) => (
-            <span key={item} className="block sm:inline">
-              {item}{" "}
+            <span key={item} className="">
+              {item}
             </span>
           ))}
         </h2>
