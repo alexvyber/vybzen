@@ -62,8 +62,8 @@ export default function Home() {
         <SubTitle>{data?.home?.data?.attributes?.subtitle}</SubTitle>
 
         <SubTitle>
-          {data?.home?.data?.attributes?.techs?.map((item) => (
-            <span>{item?.name}</span>
+          {data?.home?.data?.attributes?.techs?.map((item, index) => (
+            <span key={index}>{item?.name}</span>
           ))}
         </SubTitle>
 
