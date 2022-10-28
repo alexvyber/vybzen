@@ -1,5 +1,3 @@
-import * as React from "react"
-
 export const Button = () => {
   return (
     <div className="rounded-xl">
@@ -9,5 +7,5 @@ export const Button = () => {
         </div>
       </a>
     </div>
-  )
-}
+  );
+};

@@ -9,9 +9,9 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "dev": "turbo run dev --parallel --filter=web --filter=ui",
+    "dev": "turbo run dev",
     "develop": "turbo run develop",
-    "fix-lint": "cp -r apps/web/node_modules/next node_modules/next",
+    "wind": " rustywind --write . ",
     "format": " rustywind --write . ; prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
     "gen": "turbo run gen",
     "lint": "turbo run lint",
@@ -26,6 +26,6 @@
   },
   "packageManager": "yarn@1.22.19",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.12.0"
   }
 }

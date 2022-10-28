@@ -1,11 +1,11 @@
-import Head from "next/head"
-import { Button } from "ui"
-import katzen from "../images/katzen.png"
-import Image from "next/future/image"
+import Head from "next/head";
+import { Button } from "ui";
+import katzen from "@img/katzen.png";
+import Image from "next/future/image";
 
-const techs = ["Next", "Strapi", "TypeScript", "TailwindCSS", "GraphQl"]
+const techs = ["Next", "Strapi", "TypeScript", "TailwindCSS", "GraphQl"];
 
-import type { Post } from "generated-types"
+import type { Post } from "generated-types";
 
 // -------------------
 
@@ -13,7 +13,7 @@ export const post: Post = {
   title: "Some Title",
   author: "Some Author",
   views: 12344,
-}
+};
 
 // -------------------
 
@@ -33,10 +33,10 @@ export default function Home() {
           alt="katzen"
           className="mx-auto"
         />
-        <div className="to-brandaccent from-brandmain mx-auto inline-block inline-flex w-auto max-w-5xl items-center justify-center rounded-md bg-gray-50 bg-gradient-to-r bg-clip-text p-2 px-4 pt-16 pb-8 text-center text-6xl text-7xl font-extrabold tracking-tight text-transparent text-white text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:pt-24 sm:text-9xl lg:px-8"></div>
+        <div className="mx-auto inline-block inline-flex w-auto max-w-5xl items-center justify-center rounded-md bg-gray-50 bg-gradient-to-r from-brandmain to-brandaccent bg-clip-text p-2 px-4 pt-16 pb-8 text-center text-6xl text-7xl font-extrabold tracking-tight text-transparent text-white text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:pt-24 sm:text-9xl lg:px-8"></div>
 
-        <h1 className="mx-auto max-w-5xl text-center text-6xl font-extrabold tracking-tight text-white">
-          <span className="from-brandmain to-brandaccent inline-block bg-gradient-to-r bg-clip-text text-7xl text-transparent sm:text-9xl">
+        <h1 className="mx-auto max-w-5xl p-8 text-center text-6xl font-extrabold tracking-tight text-white">
+          <span className="inline-block bg-gradient-to-r from-brandmain to-brandaccent bg-clip-text text-7xl text-transparent sm:text-9xl">
             Katzen
           </span>
         </h1>
@@ -52,5 +52,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  )
+  );
 }

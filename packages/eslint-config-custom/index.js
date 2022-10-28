@@ -1,12 +1,10 @@
 module.exports = {
   extends: [
-    "next",
-    "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@typescript-eslint/strict",
     "turbo",
-    "prettier",
+    // "prettier",
   ],
   rules: {
     // "@next/next/no-html-link-for-pages": "off",
@@ -14,7 +12,9 @@ module.exports = {
     indent: ["error", 2, { SwitchCase: 1 }],
     "linebreak-style": ["error", "unix"],
     "no-console": 0,
+    "@typescript-eslint/no-explicit-any": "error",
+
     quotes: ["warn", "double"],
-    // semi: ["error", "always"]
+    semi: ["error", "always"],
   },
-}
+};

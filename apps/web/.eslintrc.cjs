@@ -4,5 +4,5 @@ module.exports = {
     project: "./tsconfig.json",
   },
   parser: "@typescript-eslint/parser",
-  extends: ["custom"],
-}
+  extends: ["custom", "next", "next/core-web-vitals"],
+};
