@@ -16,60 +16,32 @@ yarn dev
 
 ## CodeGen
 
-Пока не знаю, как добиться от турборепо правильного поведения для --watch
-Поэтому генерацией типов занимается тупой скрипт: `generate-types.mjs`
-
-Надо сделать так:
+В папке web
 
 ```
-node generate-types.mjs
+yarn gen:watch
 ```
-
-## Fix Lint
-
-Есть тупость с тем как резолвятся пакажи. Из-за этого для того, чтобы работал ESLint, надо делать:
-
-```
-yarn fix-lint
-```
-
-===
-
--
--
--
--
--
--
--
--
--
-
-===
-
 ## TODO
 
-- tailwind-prettier-plugin
-- graphql client
-- modern module resolution
-- tweak configs
-- develop some kind of dev conventions
-- move to RFC layout "/app" - folder
-- dark mode
-- now web uses graphql@^15 because of strapi-graphql dependent on version 15. Migrate both workspaces to graphql@^16
-- 'fix-lint' copies next folder from apps/web/node_modules to node_modules/next. FIX: this kinda should be fixed...
-
-This is an official Yarn v1 starter turborepo.
+- tailwind-prettier-plugin +
+- graphql client +
+- modern module resolution +/-
+- tweak configs ...
+- develop some kind of dev conventions  ...
+- layout "/app" - folder +
+- dark mode ...
+- now web uses graphql@^15 because of strapi-graphql dependent on version 15. Migrate both workspaces to graphql@^16 !!!
+- 'fix-lint' copies next folder from apps/web/node_modules to node_modules/next. FIX: this kinda should be fixed... +
 
 ## What's inside?
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
+TODO: what's inside
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `cms`: ...
+- `web`: ...
+- `ui`: a stub React component library shared `web` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
@@ -82,6 +54,7 @@ This turborepo has some additional tools already setup for you:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+- [rustywind]()
 
 ### Build
 
