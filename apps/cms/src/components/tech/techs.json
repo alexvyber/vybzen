@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_tech_techs",
+  "info": {
+    "displayName": "techs",
+    "icon": "apple-alt"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

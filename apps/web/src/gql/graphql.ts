@@ -1,3 +1,5 @@
+/* eslint-disable */
+import { TypedDocumentNode as DocumentNode } from "@graphql-typed-document-node/core";
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -16,8 +18,11 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   DateTime: any;
+  /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: any;
+  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
 
@@ -43,6 +48,24 @@ export type BooleanFilterInput = {
   null?: InputMaybe<Scalars["Boolean"]>;
   or?: InputMaybe<Array<InputMaybe<Scalars["Boolean"]>>>;
   startsWith?: InputMaybe<Scalars["Boolean"]>;
+};
+
+export type ComponentTechTechs = {
+  __typename?: "ComponentTechTechs";
+  id: Scalars["ID"];
+  name: Scalars["String"];
+};
+
+export type ComponentTechTechsFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentTechTechsFiltersInput>>>;
+  name?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentTechTechsFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentTechTechsFiltersInput>>>;
+};
+
+export type ComponentTechTechsInput = {
+  id?: InputMaybe<Scalars["ID"]>;
+  name?: InputMaybe<Scalars["String"]>;
 };
 
 export type DateTimeFilterInput = {
@@ -100,6 +123,8 @@ export type FloatFilterInput = {
 };
 
 export type GenericMorph =
+  | ComponentTechTechs
+  | Home
   | I18NLocale
   | Post
   | UploadFile
@@ -107,6 +132,40 @@ export type GenericMorph =
   | UsersPermissionsPermission
   | UsersPermissionsRole
   | UsersPermissionsUser;
+
+export type Home = {
+  __typename?: "Home";
+  createdAt?: Maybe<Scalars["DateTime"]>;
+  publishedAt?: Maybe<Scalars["DateTime"]>;
+  subtitle: Scalars["String"];
+  techs?: Maybe<Array<Maybe<ComponentTechTechs>>>;
+  title: Scalars["String"];
+  updatedAt?: Maybe<Scalars["DateTime"]>;
+};
+
+export type HomeTechsArgs = {
+  filters?: InputMaybe<ComponentTechTechsFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+};
+
+export type HomeEntity = {
+  __typename?: "HomeEntity";
+  attributes?: Maybe<Home>;
+  id?: Maybe<Scalars["ID"]>;
+};
+
+export type HomeEntityResponse = {
+  __typename?: "HomeEntityResponse";
+  data?: Maybe<HomeEntity>;
+};
+
+export type HomeInput = {
+  publishedAt?: InputMaybe<Scalars["DateTime"]>;
+  subtitle?: InputMaybe<Scalars["String"]>;
+  techs?: InputMaybe<Array<InputMaybe<ComponentTechTechsInput>>>;
+  title?: InputMaybe<Scalars["String"]>;
+};
 
 export type I18NLocale = {
   __typename?: "I18NLocale";
@@ -227,6 +286,7 @@ export type Mutation = {
   createUsersPermissionsRole?: Maybe<UsersPermissionsCreateRolePayload>;
   /** Create a new user */
   createUsersPermissionsUser: UsersPermissionsUserEntityResponse;
+  deleteHome?: Maybe<HomeEntityResponse>;
   deletePost?: Maybe<PostEntityResponse>;
   deleteUploadFile?: Maybe<UploadFileEntityResponse>;
   deleteUploadFolder?: Maybe<UploadFolderEntityResponse>;
@@ -246,6 +306,7 @@ export type Mutation = {
   /** Reset user password. Confirm with a code (resetToken from forgotPassword) */
   resetPassword?: Maybe<UsersPermissionsLoginPayload>;
   updateFileInfo: UploadFileEntityResponse;
+  updateHome?: Maybe<HomeEntityResponse>;
   updatePost?: Maybe<PostEntityResponse>;
   updateUploadFile?: Maybe<UploadFileEntityResponse>;
   updateUploadFolder?: Maybe<UploadFolderEntityResponse>;
@@ -340,6 +401,10 @@ export type MutationUpdateFileInfoArgs = {
   info?: InputMaybe<FileInfoInput>;
 };
 
+export type MutationUpdateHomeArgs = {
+  data: HomeInput;
+};
+
 export type MutationUpdatePostArgs = {
   data: PostInput;
   id: Scalars["ID"];
@@ -394,6 +459,8 @@ export type Post = {
   content?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
   publishedAt?: Maybe<Scalars["DateTime"]>;
+  required: Scalars["String"];
+  some: Scalars["String"];
   title?: Maybe<Scalars["String"]>;
   updatedAt?: Maybe<Scalars["DateTime"]>;
   views?: Maybe<Scalars["Int"]>;
@@ -425,6 +492,8 @@ export type PostFiltersInput = {
   not?: InputMaybe<PostFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<PostFiltersInput>>>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
+  required?: InputMaybe<StringFilterInput>;
+  some?: InputMaybe<StringFilterInput>;
   title?: InputMaybe<StringFilterInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
   views?: InputMaybe<IntFilterInput>;
@@ -434,6 +503,8 @@ export type PostInput = {
   author?: InputMaybe<Scalars["String"]>;
   content?: InputMaybe<Scalars["String"]>;
   publishedAt?: InputMaybe<Scalars["DateTime"]>;
+  required?: InputMaybe<Scalars["String"]>;
+  some?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   views?: InputMaybe<Scalars["Int"]>;
 };
@@ -445,6 +516,7 @@ export enum PublicationState {
 
 export type Query = {
   __typename?: "Query";
+  home?: Maybe<HomeEntityResponse>;
   i18NLocale?: Maybe<I18NLocaleEntityResponse>;
   i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
   me?: Maybe<UsersPermissionsMe>;
@@ -458,6 +530,10 @@ export type Query = {
   usersPermissionsRoles?: Maybe<UsersPermissionsRoleEntityResponseCollection>;
   usersPermissionsUser?: Maybe<UsersPermissionsUserEntityResponse>;
   usersPermissionsUsers?: Maybe<UsersPermissionsUserEntityResponseCollection>;
+};
+
+export type QueryHomeArgs = {
+  publicationState?: InputMaybe<PublicationState>;
 };
 
 export type QueryI18NLocaleArgs = {
@@ -918,3 +994,88 @@ export type UsersPermissionsUserRelationResponseCollection = {
   __typename?: "UsersPermissionsUserRelationResponseCollection";
   data: Array<UsersPermissionsUserEntity>;
 };
+
+export type HomeQueryVariables = Exact<{ [key: string]: never }>;
+
+export type HomeQuery = {
+  __typename?: "Query";
+  home?: {
+    __typename?: "HomeEntityResponse";
+    data?: {
+      __typename?: "HomeEntity";
+      attributes?: {
+        __typename?: "Home";
+        title: string;
+        subtitle: string;
+        techs?: Array<{
+          __typename?: "ComponentTechTechs";
+          name: string;
+        } | null> | null;
+      } | null;
+    } | null;
+  } | null;
+};
+
+export const HomeDocument = {
+  kind: "Document",
+  definitions: [
+    {
+      kind: "OperationDefinition",
+      operation: "query",
+      name: { kind: "Name", value: "Home" },
+      selectionSet: {
+        kind: "SelectionSet",
+        selections: [
+          {
+            kind: "Field",
+            name: { kind: "Name", value: "home" },
+            selectionSet: {
+              kind: "SelectionSet",
+              selections: [
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "data" },
+                  selectionSet: {
+                    kind: "SelectionSet",
+                    selections: [
+                      {
+                        kind: "Field",
+                        name: { kind: "Name", value: "attributes" },
+                        selectionSet: {
+                          kind: "SelectionSet",
+                          selections: [
+                            {
+                              kind: "Field",
+                              name: { kind: "Name", value: "title" },
+                            },
+                            {
+                              kind: "Field",
+                              name: { kind: "Name", value: "subtitle" },
+                            },
+                            {
+                              kind: "Field",
+                              name: { kind: "Name", value: "techs" },
+                              selectionSet: {
+                                kind: "SelectionSet",
+                                selections: [
+                                  {
+                                    kind: "Field",
+                                    name: { kind: "Name", value: "name" },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<HomeQuery, HomeQueryVariables>;

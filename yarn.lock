@@ -1477,10 +1477,10 @@
     "@graphql-codegen/plugin-helpers" "^2.6.2"
     tslib "~2.4.0"
 
-"@graphql-codegen/cli@^2.13.7":
-  version "2.13.7"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.13.7.tgz#53566cbba37e4c9d7e89d7c35a91e3fbf6bed988"
-  integrity sha512-Rpk4WWrDgkDoVELftBr7/74MPiYmCITEF2+AWmyZZ2xzaC9cO2PqzZ+OYDEBNWD6UEk0RrIfVSa+slDKjhY59w==
+"@graphql-codegen/cli@^2.13.8":
+  version "2.13.8"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.13.8.tgz#2ef3972284f63540c26fcad28374351eb627592b"
+  integrity sha512-xX+lT51nMBD3b6lDyA+BDyJoEKnsPMctM/Fx8st0gEy7ZgdWLrsgOBOn4k71yyejOy3CHnRV5LMKWdhiQDaYsA==
   dependencies:
     "@babel/generator" "^7.18.13"
     "@babel/template" "^7.18.10"
@@ -1493,7 +1493,7 @@
     "@graphql-tools/github-loader" "^7.3.6"
     "@graphql-tools/graphql-file-loader" "^7.5.0"
     "@graphql-tools/json-file-loader" "^7.4.1"
-    "@graphql-tools/load" "^7.7.1"
+    "@graphql-tools/load" "7.8.0"
     "@graphql-tools/prisma-loader" "^7.2.7"
     "@graphql-tools/url-loader" "^7.13.2"
     "@graphql-tools/utils" "^8.9.0"
@@ -1519,10 +1519,10 @@
     yaml "^1.10.0"
     yargs "^17.0.0"
 
-"@graphql-codegen/client-preset@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/client-preset/-/client-preset-1.1.0.tgz#da114f3eebb19f239e8cd80d206c153b7f108ecf"
-  integrity sha512-XZCkK7LVEaj2mXdLrkrxKlAUVKPuEPVlvP+halrfAoKYELTxHx+tgQc9PzhKLlijaHMbH76nEstDcc1aoXUgtA==
+"@graphql-codegen/client-preset@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/client-preset/-/client-preset-1.1.1.tgz#d48e2fb0a09a033d598dfd514930a05fdbf94fd8"
+  integrity sha512-RyFkjd6gNOP2eJTg5+kOyByHqZCy8awm3wBNKqC8deSjcWfyDER7fBXvZeq63J7YX2jpifJzDATJ/+4R9A7r7Q==
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
     "@babel/template" "^7.15.4"
@@ -1597,6 +1597,16 @@
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.6.2"
     "@graphql-codegen/typescript" "^2.7.5"
+    "@graphql-codegen/visitor-plugin-common" "2.13.0"
+    auto-bind "~4.0.0"
+    tslib "~2.4.0"
+
+"@graphql-codegen/typescript-urql@^3.7.2":
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-urql/-/typescript-urql-3.7.2.tgz#c52590a1abf881d6fe28bb8130500dadee2a3d82"
+  integrity sha512-q5IoEULzK4LrgJWWp3LxqzFNS/OGCPij3RLtCe2UNQSLT+sJyB0oIZvCxYtNjslys1qiDD9oVIc827NaNEfAWw==
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.6.2"
     "@graphql-codegen/visitor-plugin-common" "2.13.0"
     auto-bind "~4.0.0"
     tslib "~2.4.0"
@@ -1735,7 +1745,17 @@
     tslib "^2.4.0"
     unixify "^1.0.0"
 
-"@graphql-tools/load@^7.5.5", "@graphql-tools/load@^7.7.1":
+"@graphql-tools/load@7.8.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-7.8.0.tgz#bd4d2e2a5117de9a60f9691a218217e96afc2ea7"
+  integrity sha512-l4FGgqMW0VOqo+NMYizwV8Zh+KtvVqOf93uaLo9wJ3sS3y/egPCgxPMDJJ/ufQZG3oZ/0oWeKt68qop3jY0yZg==
+  dependencies:
+    "@graphql-tools/schema" "9.0.4"
+    "@graphql-tools/utils" "8.12.0"
+    p-limit "3.1.0"
+    tslib "^2.4.0"
+
+"@graphql-tools/load@^7.5.5":
   version "7.7.7"
   resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-7.7.7.tgz#0d6fb0804177658f609562982a6a68e008073ca0"
   integrity sha512-IpI2672zcoAX4FLjcH5kvHc7eqjPyLP1svrIcZKQenv0GRS6dW0HI9E5UCBs0y/yy8yW6s+SvpmNsfIlkMj3Kw==
@@ -2772,6 +2792,19 @@
   integrity sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==
   dependencies:
     defer-to-connect "^2.0.0"
+
+"@tanstack/query-core@4.13.0":
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-4.13.0.tgz#89153096d1fce42c0294fa1d1ae4b3e72aa5353b"
+  integrity sha512-PzmLQcEgC4rl2OzkiPHYPC9O79DFcMGaKsOzDEP+U4PJ+tbkcEP+Z+FQDlfvX8mCwYC7UNH7hXrQ5EdkGlJjVg==
+
+"@tanstack/react-query@^4.13.0":
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-4.13.0.tgz#13797d590a6c0708545881e38aea5eb39b960c28"
+  integrity sha512-dI/5hJ/pGQ74P5hxBLC9h6K0/Cap2T3k0ZjjjFLBCNnohDYgl7LNmMopzrRzBHk2mMjf2hgXHIzcKNG8GOZ5hg==
+  dependencies:
+    "@tanstack/query-core" "4.13.0"
+    use-sync-external-store "^1.2.0"
 
 "@tootallnate/once@2":
   version "2.0.0"
@@ -7591,7 +7624,7 @@ graphql-ws@^5.4.1:
   resolved "https://registry.yarnpkg.com/graphql-ws/-/graphql-ws-5.11.2.tgz#d5e0acae8b4d4a4cf7be410a24135cfcefd7ddc0"
   integrity sha512-4EiZ3/UXYcjm+xFGP544/yW1+DVI8ZpKASFbzrV5EDTFWJp0ZvLl4Dy2fSZAzz9imKp5pZMIcjB0x/H69Pv/6w==
 
-graphql@^15.5.1:
+graphql@^15.5.0, graphql@^15.5.1:
   version "15.8.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.8.0.tgz#33410e96b012fa3bdb1091cc99a94769db212b38"
   integrity sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==
@@ -13169,7 +13202,7 @@ urql@^3.0.3:
     "@urql/core" "^3.0.3"
     wonka "^6.0.0"
 
-use-sync-external-store@1.2.0:
+use-sync-external-store@1.2.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==

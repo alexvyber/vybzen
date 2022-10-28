@@ -1,27 +1,51 @@
 import Head from "next/head";
-import { Button } from "ui";
-import katzen from "@img/katzen.png";
 import Image from "next/future/image";
 
-const techs = ["Next", "Strapi", "TypeScript", "TailwindCSS", "GraphQl"];
+// imports from ui
+import { Button, SubTitle, Title } from "ui";
+import katzen from "@img/katzen.png";
 
-import type { Post } from "generated-types";
+import { useQuery } from "urql";
+import { graphql } from "@/gql/gql";
 
 // -------------------
 
-export const post: Post = {
-  title: "Some Title",
-  author: "Some Author",
-  views: 12344,
-};
+const homeQueryDocument = graphql(`
+  query Home {
+    home {
+      data {
+        attributes {
+          title
+          subtitle
+          techs {
+            name
+          }
+        }
+      }
+    }
+  }
+`);
 
 // -------------------
 
 export default function Home() {
+  const [result] = useQuery({ query: homeQueryDocument });
+
+  const { data, fetching, error } = result;
+
+  if (fetching) return <p>Loading...</p>;
+  if (error) return <p>Oh no... {error.message}</p>;
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-800 p-4 pt-2">
       <Head>
-        <title>Katzen - Turborepo Next.JS + Strapi + Tailwind + GraphQL</title>
+        <title>
+          {" "}
+          {data?.home?.data?.attributes?.title} -
+          {data?.home?.data?.attributes?.techs
+            ?.map((item) => item?.name)
+            .toString()}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -33,20 +57,16 @@ export default function Home() {
           alt="katzen"
           className="mx-auto"
         />
-        <div className="mx-auto inline-block inline-flex w-auto max-w-5xl items-center justify-center rounded-md bg-gray-50 bg-gradient-to-r from-brandmain to-brandaccent bg-clip-text p-2 px-4 pt-16 pb-8 text-center text-6xl text-7xl font-extrabold tracking-tight text-transparent text-white text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:pt-24 sm:text-9xl lg:px-8"></div>
+        <Title>{data?.home?.data?.attributes?.title}</Title>
 
-        <h1 className="mx-auto max-w-5xl p-8 text-center text-6xl font-extrabold tracking-tight text-white">
-          <span className="inline-block bg-gradient-to-r from-brandmain to-brandaccent bg-clip-text text-7xl text-transparent sm:text-9xl">
-            Katzen
-          </span>
-        </h1>
-        <h2 className="mt-8 flex flex-wrap justify-center gap-3 text-center text-3xl text-white">
-          {techs.map((item) => (
-            <span key={item} className="">
-              {item}
-            </span>
+        <SubTitle>{data?.home?.data?.attributes?.subtitle}</SubTitle>
+
+        <SubTitle>
+          {data?.home?.data?.attributes?.techs?.map((item) => (
+            <span>{item?.name}</span>
           ))}
-        </h2>
+        </SubTitle>
+
         <div className="mx-auto mt-8 max-w-xl sm:flex sm:justify-center md:mt-8">
           <Button />
         </div>
