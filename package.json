@@ -9,7 +9,8 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "dev": "turbo run dev --parallel",
+    "dev": "turbo run dev --parallel --filter=web --filter=ui",
+    "develop": "turbo run develop",
     "fix-lint": "cp -r apps/web/node_modules/next node_modules/next",
     "format": " rustywind --write . ; prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
     "gen": "turbo run gen",
