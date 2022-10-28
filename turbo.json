@@ -10,8 +10,8 @@
       "outputs": []
     },
     "start": {},
-    "gen": {},
-    "clean": {},
+    "gen": { "cache": false },
+    "clean": { "cache": false },
     "dev": {
       "cache": false
     },
