@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/future/image";
 
 // imports from ui
-import { Button, SubTitle, Title } from "ui";
+import { SubTitle, Title, Button } from "ui";
 import katzen from "@img/katzen.png";
 
 import { useQuery } from "urql";
@@ -67,9 +67,16 @@ export default function Home() {
           ))}
         </SubTitle>
 
-        <div className="mx-auto mt-8 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button />
+        <div className="my-4 flex flex-col gap-4">
+          <Button href="https://github.com/alexvyber/katzen">GitHub</Button>
+          <Button href="https://github.com/alexvyber/katzen" intent="secondary">
+            GitHub
+          </Button>
+          <Button href="https://github.com/alexvyber/katzen" rounded="full">
+            GitHub
+          </Button>
         </div>
+        <div className="mx-auto mt-8 max-w-xl sm:flex sm:justify-center md:mt-8"></div>
       </main>
     </div>
   );
