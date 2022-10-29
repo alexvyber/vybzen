@@ -5,8 +5,6 @@ cd katzen
 nvm use
 ```
 
-Требуется Node v18+
-
 ## Запуск
 
 ```
@@ -21,17 +19,19 @@ yarn dev
 ```
 yarn gen:watch
 ```
+
 ## TODO
 
 - tailwind-prettier-plugin +
 - graphql client +
 - modern module resolution +/-
 - tweak configs ...
-- develop some kind of dev conventions  ...
+- develop some kind of dev conventions ...
 - layout "/app" - folder +
 - dark mode ...
 - now web uses graphql@^15 because of strapi-graphql dependent on version 15. Migrate both workspaces to graphql@^16 !!!
-- 'fix-lint' copies next folder from apps/web/node_modules to node_modules/next. FIX: this kinda should be fixed... +
+- storybook install ...
+- big cleanup
 
 ## What's inside?
 
@@ -41,6 +41,7 @@ TODO: what's inside
 
 - `cms`: ...
 - `web`: ...
+- `play`: ...
 - `ui`: a stub React component library shared `web` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo

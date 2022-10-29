@@ -6,7 +6,7 @@ import "ui/styles.css";
 import { createClient, Provider } from "urql";
 
 const client = createClient({
-  url: "http://127.0.0.1:1337/graphql",
+  url: "http://127.0.0.1:7777/graphql",
 });
 
 import type { AppProps } from "next/app";

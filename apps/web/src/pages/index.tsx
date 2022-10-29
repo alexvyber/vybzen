@@ -40,7 +40,6 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-800 p-4 pt-2">
       <Head>
         <title>
-          {" "}
           {data?.home?.data?.attributes?.title} -
           {data?.home?.data?.attributes?.techs
             ?.map((item) => item?.name)
@@ -69,14 +68,21 @@ export default function Home() {
 
         <div className="my-4 flex flex-col gap-4">
           <Button href="https://github.com/alexvyber/katzen">GitHub</Button>
+
           <Button href="https://github.com/alexvyber/katzen" intent="secondary">
             GitHub
           </Button>
-          <Button href="https://github.com/alexvyber/katzen" rounded="full">
+
+          <Button href="https://github.com/alexvyber/katzen">GitHub</Button>
+
+          <Button
+            href="https://github.com/alexvyber/katzen"
+            rounded="full"
+            intent="secondary"
+          >
             GitHub
           </Button>
         </div>
-        <div className="mx-auto mt-8 max-w-xl sm:flex sm:justify-center md:mt-8"></div>
       </main>
     </div>
   );

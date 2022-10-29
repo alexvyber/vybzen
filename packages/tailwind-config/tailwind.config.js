@@ -2,8 +2,10 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
-    // app content
+    // web content
     "src/**/*.{js,ts,jsx,tsx}",
+    // play content
+    "pages/**/*.{js,ts,jsx,tsx}",
     // include packages if not transpiling
     "../../packages/**/*.{js,ts,jsx,tsx}",
   ],
