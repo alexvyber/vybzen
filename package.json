@@ -1,6 +1,6 @@
 {
   "name": "katzen",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -9,16 +9,18 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev ",
+    "dev:gen": "concurrently \"turbo run dev\" \"yarn workspace web gen:watch\"",
     "develop": "turbo run develop",
-    "wind": " rustywind --write . ",
     "format": " rustywind --write . ; prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
     "gen": "turbo run gen",
     "lint": "turbo run lint",
     "sort-package-json": "npx sort-package-json && npx sort-package-json apps/web/package.json && npx sort-package-json apps/cms/package.json",
-    "start": "turbo run start"
+    "start": "turbo run start",
+    "wind": " rustywind --write . "
   },
   "devDependencies": {
+    "concurrently": "^7.2.2",
     "eslint-config-custom": "*",
     "prettier": "latest",
     "rustywind": "^0.15.1",

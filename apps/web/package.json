@@ -1,16 +1,26 @@
 {
   "name": "web",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "next build",
     "clean": "rm -rf .next",
     "dev": "next dev -p 4000",
-    "lint": "next lint",
-    "start": "next start",
     "gen": "graphql-codegen",
-    "gen:watch": "graphql-codegen --watch"
+    "gen:watch": "graphql-codegen --watch",
+    "lint": "next lint",
+    "start": "next start"
   },
+  "prettier": {
+    "cli": {
+      "ignore": [
+        "src/gql"
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "src/gql"
+  ],
   "dependencies": {
     "graphql": "^15.5.1",
     "next": "^12.3.1",
@@ -37,15 +47,5 @@
     "tailwindcss": "^3.2.1",
     "tsconfig": "*",
     "typescript": "^4.8.4"
-  },
-  "eslintIgnore": [
-    "src/gql"
-  ],
-  "prettier": {
-    "cli": {
-      "ignore": [
-        "src/gql"
-      ]
-    }
   }
 }
