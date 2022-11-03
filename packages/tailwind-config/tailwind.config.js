@@ -15,6 +15,10 @@ module.exports = {
         brandmain: colors.orange[500],
         brandaccent: colors.yellow[500],
       },
+      screens: {
+        xs: "384px",
+        "2xs": "512px",
+      },
     },
   },
   plugins: [],
