@@ -28,7 +28,9 @@ const buttonStyles = cva(className, {
 
 // -------------------
 
-export interface Props extends VariantProps<typeof buttonStyles> {
+export interface CvaProps extends VariantProps<typeof buttonStyles> { }
+
+export interface Props extends PropsWithChildren<CvaProps> {
   href: string;
 }
 
@@ -37,7 +39,7 @@ export const Button = ({
   children,
   rounded,
   href,
-}: PropsWithChildren<Props>) => {
+}: Props) => {
   return (
     <a
       href={href}

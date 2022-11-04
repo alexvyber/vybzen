@@ -16,6 +16,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@ladle/react": "^2.4.5",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
