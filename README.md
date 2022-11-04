@@ -24,14 +24,16 @@ yarn gen:watch
 
 - tailwind-prettier-plugin +
 - graphql client +
-- modern module resolution +/-
-- tweak configs ...
+- modern module resolution ++/-
+- tweak configs +
 - develop some kind of dev conventions ...
-- layout "/app" - folder +
+- layout "/app" - droped at least for 4-6 months due to unstability of new features of next 13
 - dark mode ...
 - now web uses graphql@^15 because of strapi-graphql dependent on version 15. Migrate both workspaces to graphql@^16 !!!
-- storybook install ...
-- big cleanup
+- ladel installed
+- big cleanup +/- 
+- docuemnt via mdx at least parts that can be difficult to understand 
+- create docs folder where project will be documented
 
 ## What's inside?
 

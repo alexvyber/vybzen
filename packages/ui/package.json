@@ -12,7 +12,8 @@
     "clean": "rm -rf dist",
     "dev": "concurrently \"tsup src/index.tsx --format esm,cjs --dts --external react --watch\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\" \"yarn ladle serve\"",
     "fix": "eslint src --fix",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "story": "ladle serve"
   },
   "dependencies": {
     "@ladle/react": "^2.4.5",

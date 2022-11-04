@@ -37,7 +37,3 @@ yarn-error.log*
 # --------------------------
 .turbo
 
-# alexvyber personal
-# --------------------------
-apps/play
-

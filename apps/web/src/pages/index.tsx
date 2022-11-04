@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/future/image";
+import Image from "next/image";
 
 // imports from ui
 import { SubTitle, Title, Button } from "ui";
