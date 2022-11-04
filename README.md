@@ -31,8 +31,8 @@ yarn gen:watch
 - dark mode ...
 - now web uses graphql@^15 because of strapi-graphql dependent on version 15. Migrate both workspaces to graphql@^16 !!!
 - ladel installed
-- big cleanup +/- 
-- docuemnt via mdx at least parts that can be difficult to understand 
+- big cleanup +/-
+- docuemnt via mdx at least parts that can be difficult to understand
 - create docs folder where project will be documented
 
 ## What's inside?
