@@ -15,7 +15,7 @@
     "format": " rustywind --write . ; prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
     "gen": "turbo run gen",
     "lint": "turbo run lint",
-    "sort-package-json": "npx sort-package-json && npx sort-package-json apps/web/package.json && npx sort-package-json apps/cms/package.json",
+    "sort-package-json": "npx sort-package-json && npx sort-package-json apps/web/package.json && npx sort-package-json apps/cms/package.json && npx sort-package-json packages/katzen-ui/package.json  && npx sort-package-json packages/ui/package.json && npx sort-package-json packages/tailwind-config/package.json && npx sort-package-json packages/eslint-config-custom/package.json && npx sort-package-json packages/tsconfig/package.json",
     "start": "turbo run start",
     "wind": " rustywind --write . "
   },

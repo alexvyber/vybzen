@@ -1,8 +1,8 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-// -------------------
+// --
 
 const className =
   "flex justify-center items-center py-3 px-8 text-xl font-semibold transition duration-1000 ease-in-out delay-100 md:py-4 md:px-10 md:text-2xl";
@@ -26,20 +26,13 @@ const buttonStyles = cva(className, {
   },
 });
 
-// -------------------
+// --
 
-export interface CvaProps extends VariantProps<typeof buttonStyles> { }
-
-export interface Props extends PropsWithChildren<CvaProps> {
+export interface Props extends VariantProps<typeof buttonStyles> {
+  children: ReactNode;
   href: string;
 }
-
-export const Button = ({
-  intent,
-  children,
-  rounded,
-  href,
-}: Props) => {
+export const Button = ({ intent, children, rounded, href }: Props) => {
   return (
     <a
       href={href}
