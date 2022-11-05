@@ -4,7 +4,8 @@ module.exports = {
   tabWidth: 2,
   singleQuote: false,
   jsxSingleQuote: false,
+  useTabs: false,
   arrowParens: "always",
-  printWidth: 80,
+  printWidth: 100,
   singleAttributePerLine: true,
 };

@@ -34,6 +34,7 @@ yarn gen:watch
 - big cleanup +/-
 - docuemnt via mdx at least parts that can be difficult to understand
 - create docs folder where project will be documented
+- code splitting
 
 ## What's inside?
 
