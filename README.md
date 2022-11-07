@@ -35,6 +35,25 @@ yarn gen:watch
 - docuemnt via mdx at least parts that can be difficult to understand
 - create docs folder where project will be documented
 - code splitting
+- next-auth! package is great. we just meed to makd sense pf it.
+- separate user management from other app
+- don't include default gql client
+- make possible to use urql and react query as gql plugin
+- make sense of rustywind
+- make use of .vscode folder
+- remove data.attributes from strapi's responses if possible
+- simplify
+- remove some configs
+- remove packages if possible
+- configure strapi
+- brand strapi
+- more configs in ladel
+- adopt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification)
+- add ci/cd
+
+## NOTES
+pnpm just doesn't work, so yarn is used
+
 
 ## What's inside?
 
