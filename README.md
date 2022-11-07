@@ -52,8 +52,8 @@ yarn gen:watch
 - add ci/cd
 
 ## NOTES
-pnpm just doesn't work, so yarn is used
 
+pnpm just doesn't work, so yarn is used
 
 ## What's inside?
 
