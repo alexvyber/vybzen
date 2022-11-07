@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "strapi build",
-    "clean": "rm -rf dist",
+    "clean": "rimraf ./dist ./.cache",
     "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",

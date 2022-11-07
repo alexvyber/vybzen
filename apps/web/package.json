@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "clean": "rm -rf .next",
+    "clean": "rimraf ./.next",
     "dev": "next dev -p 4000",
     "gen": "graphql-codegen",
     "gen:watch": "graphql-codegen --watch",

@@ -38,7 +38,7 @@ yarn gen:watch
 - next-auth! package is great. we just meed to makd sense pf it.
 - separate user management from other app
 - don't include default gql client
-- make possible to use urql and react query as gql plugin
+- make possible to use urql and react query as gql plugin. Prefer react-query
 - make sense of rustywind
 - make use of .vscode folder
 - remove data.attributes from strapi's responses if possible
