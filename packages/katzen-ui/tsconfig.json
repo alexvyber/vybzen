@@ -1,5 +1,23 @@
 {
   "extends": "tsconfig/react-library.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": ["dom", "esnext", "dom.iterable"],
+    "importHelpers": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@headlessui/react": ["src"],
+      "*": ["src/*", "node_modules/*"]
+    },
+    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true
+  }
 }
