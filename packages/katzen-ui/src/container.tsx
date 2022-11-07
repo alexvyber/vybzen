@@ -33,9 +33,5 @@ export default function Container({
   mobilePadding = true,
   wide = false,
 }: PropsWithChildren<Props>) {
-  return (
-    <Component className={classes({ mobilePadding, wide })}>
-      {children}
-    </Component>
-  );
+  return <Component className={classes({ mobilePadding, wide })}>{children}</Component>;
 }

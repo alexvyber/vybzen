@@ -4,8 +4,7 @@ import type { VariantProps } from "class-variance-authority";
 
 // --
 
-const className =
-  "relative py-2 sm:py-8 md:py-12 lg:py-20 xl:py-32 xs:py-4 2xs:py-6";
+const className = "relative py-2 sm:py-8 md:py-12 lg:py-20 xl:py-32 xs:py-4 2xs:py-6";
 
 const classes = cva(className, {
   variants: {},
@@ -29,9 +28,7 @@ export default function Divider({ title }: Props) {
       </div>
       {title && (
         <div className="relative flex justify-center">
-          <span className="bg-white px-3 text-lg font-medium text-gray-900">
-            {title}
-          </span>
+          <span className="bg-white px-3 text-lg font-medium text-gray-900">{title}</span>
         </div>
       )}
     </div>

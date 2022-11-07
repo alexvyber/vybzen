@@ -10,10 +10,8 @@ const className =
 const buttonStyles = cva(className, {
   variants: {
     intent: {
-      primary:
-        "bg-orange-500 text-white hover:bg-orange-600 hover:text-orange-100 hover:scale-105",
-      secondary:
-        "bg-zinc-100 text-zinc-600 hover:bg-orange-50 hover:text-black",
+      primary: "bg-orange-500 text-white hover:bg-orange-600 hover:text-orange-100 hover:scale-105",
+      secondary: "bg-zinc-100 text-zinc-600 hover:bg-orange-50 hover:text-black",
     },
     rounded: {
       full: "rounded-full",

@@ -18,9 +18,6 @@ interface Props extends VariantProps<typeof classes> {
   as?: keyof JSX.IntrinsicElements;
 }
 
-export default function Box({
-  as: Component = "div",
-  children,
-}: PropsWithChildren<Props>) {
+export default function Box({ as: Component = "div", children }: PropsWithChildren<Props>) {
   return <Component className={classes({})}>{children}</Component>;
 }

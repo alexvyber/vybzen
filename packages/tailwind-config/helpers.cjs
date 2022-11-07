@@ -14,11 +14,7 @@
 const getSpacingRange = (start, numberOfNewSteps, step) => {
   const spacing = {};
 
-  for (
-    let i = start + step * 4;
-    i < start + numberOfNewSteps * step * 4;
-    i = i + step * 4
-  ) {
+  for (let i = start + step * 4; i < start + numberOfNewSteps * step * 4; i = i + step * 4) {
     spacing[`${i}`] = `${i / 4}rem`;
   }
 
