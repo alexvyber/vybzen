@@ -9,16 +9,16 @@
   "scripts": {
     "build": "strapi build",
     "clean": "rimraf ./dist ./.cache",
-    "dev": "strapi develop",
+    "dev:dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "^4.4.7",
-    "@strapi/plugin-i18n": "4.4.7",
-    "@strapi/plugin-users-permissions": "4.4.7",
-    "@strapi/strapi": "4.4.7",
+    "@strapi/plugin-graphql": "^4.5.0",
+    "@strapi/plugin-i18n": "^4.5.0",
+    "@strapi/plugin-users-permissions": "^4.5.0",
+    "@strapi/strapi": "^4.5.0",
     "pg": "8.6.0"
   },
   "engines": {
