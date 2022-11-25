@@ -1,0 +1,44 @@
+{
+  "name": "one",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/graphql",
+      "**/graphql/**",
+      "**/@strapi/plugin-graphql",
+      "**/@strapi/plugin-graphql/**"
+    ]
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "clean:purge": "rimraf **/.turbo **/node_modules **/.cache **/.next **/dist",
+    "clean:turbo": "rimraf **/.turbo",
+    "dev": "turbo run dev ",
+    "dev:gen": "concurrently \"turbo run dev\" \"yarn workspace web gen:watch\"",
+    "develop": "turbo run develop",
+    "format": " rustywind --write . ; prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
+    "gen": "turbo run gen",
+    "lint": "turbo run lint",
+    "sort-package-json": "npx sort-package-json && npx sort-package-json apps/web/package.json && npx sort-package-json apps/cms/package.json && npx sort-package-json packages/katzen-ui/package.json  && npx sort-package-json packages/ui/package.json && npx sort-package-json packages/tailwind-config/package.json && npx sort-package-json packages/eslint-config-custom/package.json && npx sort-package-json packages/tsconfig/package.json",
+    "start": "turbo run start",
+    "wind": " rustywind --write . "
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "^2.8.0",
+    "rimraf": "^3.0.2",
+    "rustywind": "^0.15.1",
+    "turbo": "^1.6.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@7.14.2"
+}
