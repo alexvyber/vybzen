@@ -5,17 +5,17 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "clean:purge": "rimraf **/.turbo **/node_modules **/.cache **/.next **/dist",
+    "clean:purge": "rimraf **/.turbo **/node_modules **/.cache **/.next **/dist **/.next",
     "clean:turbo": "rimraf **/.turbo",
-    "dev": "turbo run dev ",
-    "dev:gen": "concurrently \"turbo run dev\" \"yarn workspace web gen:watch\"",
+    "dev": "turbo run dev",
+    "dev:gen": "concurrently \"turbo run dev\" \"pnpm workspace web gen:watch\"",
     "develop": "turbo run develop",
     "format": " rustywind --write . ; prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
     "gen": "turbo run gen",
     "lint": "turbo run lint",
-    "sort-package-json": "npx sort-package-json && npx sort-package-json apps/web/package.json && npx sort-package-json apps/cms/package.json && npx sort-package-json packages/katzen-ui/package.json  && npx sort-package-json packages/ui/package.json && npx sort-package-json packages/tailwind-config/package.json && npx sort-package-json packages/eslint-config-custom/package.json && npx sort-package-json packages/tsconfig/package.json",
+    "sort": "sort-package-json **/package.json",
     "start": "turbo run start",
-    "wind": " rustywind --write . "
+    "wind": "rustywind --write . "
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
@@ -23,10 +23,11 @@
     "prettier": "^2.8.0",
     "rimraf": "^3.0.2",
     "rustywind": "^0.15.1",
+    "sort-package-json": "^2.1.0",
     "turbo": "^1.6.3"
   },
+  "packageManager": "pnpm@7.14.2",
   "engines": {
     "node": ">=14.0.0"
-  },
-  "packageManager": "pnpm@7.14.2"
+  }
 }

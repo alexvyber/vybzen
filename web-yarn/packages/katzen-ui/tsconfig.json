@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": [
+      "dom",
+      "esnext",
+      "dom.iterable"
+    ],
+    "importHelpers": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "moduleResolution": "nodenext",
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@headlessui/react": [
+        "src"
+      ],
+      "workspace:*": [
+        "src/*",
+        "node_modules/*"
+      ]
+    },
+    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ],
+  "extends": "tsconfig/react-library.json",
+  "include": [
+    "src"
+  ]
+}
