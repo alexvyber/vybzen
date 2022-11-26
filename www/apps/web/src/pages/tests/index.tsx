@@ -7,7 +7,7 @@ import { getNegativePatternsAsPositive } from 'fast-glob/out/managers/tasks'
 
 import { getAllTests } from '@/lib/getAllTests'
 
-import Tests from '@/lib/tests.js'
+import Tests from '@/lib/tests.ts'
 import { Article } from '../articles'
 
 const Test = ({ test }) => {

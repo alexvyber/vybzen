@@ -12,6 +12,7 @@ const client = createClient({
 })
 
 import type { AppProps } from "next/app"
+import { useEffect, useRef } from "react"
 
 
 function usePrevious(value) {
