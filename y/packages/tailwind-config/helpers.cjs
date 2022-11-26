@@ -12,19 +12,19 @@
     },
  */
 const getSpacingRange = (start, numberOfNewSteps, step) => {
-  const spacing = {};
+  const spacing = {}
 
   for (
     let i = start + step * 4;
     i < start + numberOfNewSteps * step * 4;
     i = i + step * 4
   ) {
-    spacing[`${i}`] = `${i / 4}rem`;
+    spacing[`${i}`] = `${i / 4}rem`
   }
 
-  return spacing;
-};
+  return spacing
+}
 
 module.exports = {
   getSpacingRange,
-};
+}

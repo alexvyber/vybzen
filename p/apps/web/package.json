@@ -28,7 +28,7 @@
     "prettier-plugin-organize-attributes": "^0.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "ui": "*",
+    "ui": "workspace:*",
     "urql": "^3.0.3",
     "zod": "^3.19.1"
   },
@@ -41,14 +41,14 @@
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "autoprefixer": "^10.4.13",
     "eslint": "8.28.0",
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:*",
     "next-transpile-modules": "10.0.0",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "prettier-plugin-tailwindcss": "^0.2.0",
-    "tailwind-config": "*",
+    "tailwind-config": "workspace:*",
     "tailwindcss": "^3.2.4",
-    "tsconfig": "*",
+    "tsconfig": "workspace:*",
     "typescript": "^4.9.3"
   }
 }

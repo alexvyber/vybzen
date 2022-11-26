@@ -1,20 +1,20 @@
-import { cva } from "class-variance-authority";
-import type { VariantProps } from "class-variance-authority";
+import { cva } from 'class-variance-authority'
+import type { VariantProps } from 'class-variance-authority'
 
 // --
 
 const className =
-  "relative py-2 sm:py-8 md:py-12 lg:py-20 xl:py-32 xs:py-4 2xs:py-6";
+  'relative py-2 sm:py-8 md:py-12 lg:py-20 xl:py-32 xs:py-4 2xs:py-6'
 
 const classes = cva(className, {
   variants: {},
   defaultVariants: {},
-});
+})
 
 // --
 
 interface Props extends VariantProps<typeof classes> {
-  title?: string;
+  title?: string
 }
 
 export const Divider = ({ title }: Props) => {
@@ -31,5 +31,5 @@ export const Divider = ({ title }: Props) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}

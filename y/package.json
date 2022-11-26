@@ -9,8 +9,6 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "clean:purge": "rimraf nore_modules **/.turbo **/node_modules **/.cache **/.next **/dist **/.next",
-    "clean:turbo": "rimraf **/.turbo",
     "dev": "turbo run dev",
     "dev:gen": "concurrently \"turbo run dev\" \"yarn workspace web gen:watch\"",
     "format": "prettier --write \"**/*.{cjs,mjs,js,json,ts,tsx,md}\" ",
@@ -24,12 +22,11 @@
     "concurrently": "^7.6.0",
     "eslint-config-custom": "*",
     "prettier": "^2.8.0",
-    "rimraf": "^3.0.2",
     "rustywind": "^0.15.1",
     "sort-package-json": "^2.1.0",
     "turbo": "^1.6.3"
   },
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@3.3.0",
   "engines": {
     "node": ">=14.0.0"
   }

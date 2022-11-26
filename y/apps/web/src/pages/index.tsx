@@ -1,6 +1,5 @@
 import Head from "next/head";
 
-
 import Image from "next/image";
 
 // imports from ui
@@ -46,6 +45,10 @@ const homeQueryDocument = graphql(`
 
 // --
 
+const items = ["asdf", "asdfasdf", "asdfasdf"];
+
+console.log(items);
+
 export default function Home() {
   const [result] = useQuery({ query: homeQueryDocument });
 
@@ -55,7 +58,7 @@ export default function Home() {
   if (error) return <p>Oh no... {error.message}</p>;
 
   return (
-    <div className="flex flex-col justify-center items-center p-4 pt-2 min-h-screen bg-zinc-800">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-800 p-4 pt-2">
       <Head>
         <title>
           {data?.home?.data?.attributes?.title} -
@@ -66,7 +69,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="px-4 pt-16 pb-8 mx-auto w-auto sm:pt-24 lg:px-8">
+      <main className="mx-auto w-auto px-4 pt-16 pb-8 sm:pt-24 lg:px-8">
         <Image
           src={katzen}
           width={250}
@@ -84,7 +87,7 @@ export default function Home() {
           ))}
         </SubTitle>
 
-        <div className="flex flex-col gap-4 my-4">
+        <div className="my-4 flex flex-col gap-4">
           <Button href="https://github.com/alexvyber/katzen">GitHub</Button>
 
           <Button href="https://github.com/alexvyber/katzen" intent="secondary">

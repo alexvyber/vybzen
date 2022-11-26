@@ -930,27 +930,6 @@ export type HomeQuery = {
   } | null;
 };
 
-export type HomeTwoQueryVariables = Exact<{ [key: string]: never }>;
-
-export type HomeTwoQuery = {
-  __typename?: "Query";
-  home?: {
-    __typename?: "HomeEntityResponse";
-    data?: {
-      __typename?: "HomeEntity";
-      attributes?: {
-        __typename?: "Home";
-        title?: string | null;
-        subtitle?: string | null;
-        techs?: Array<{
-          __typename?: "ComponentTechsTechs";
-          name?: string | null;
-        } | null> | null;
-      } | null;
-    } | null;
-  } | null;
-};
-
 export const HomeDocument = {
   kind: "Document",
   definitions: [
@@ -1014,66 +993,3 @@ export const HomeDocument = {
     },
   ],
 } as unknown as DocumentNode<HomeQuery, HomeQueryVariables>;
-export const HomeTwoDocument = {
-  kind: "Document",
-  definitions: [
-    {
-      kind: "OperationDefinition",
-      operation: "query",
-      name: { kind: "Name", value: "HomeTwo" },
-      selectionSet: {
-        kind: "SelectionSet",
-        selections: [
-          {
-            kind: "Field",
-            name: { kind: "Name", value: "home" },
-            selectionSet: {
-              kind: "SelectionSet",
-              selections: [
-                {
-                  kind: "Field",
-                  name: { kind: "Name", value: "data" },
-                  selectionSet: {
-                    kind: "SelectionSet",
-                    selections: [
-                      {
-                        kind: "Field",
-                        name: { kind: "Name", value: "attributes" },
-                        selectionSet: {
-                          kind: "SelectionSet",
-                          selections: [
-                            {
-                              kind: "Field",
-                              name: { kind: "Name", value: "title" },
-                            },
-                            {
-                              kind: "Field",
-                              name: { kind: "Name", value: "subtitle" },
-                            },
-                            {
-                              kind: "Field",
-                              name: { kind: "Name", value: "techs" },
-                              selectionSet: {
-                                kind: "SelectionSet",
-                                selections: [
-                                  {
-                                    kind: "Field",
-                                    name: { kind: "Name", value: "name" },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<HomeTwoQuery, HomeTwoQueryVariables>;
