@@ -9,6 +9,7 @@
     "importHelpers": true,
     "strict": true,
     "noUnusedLocals": true,
+    "moduleResolution": "nodenext",
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -18,7 +19,7 @@
       "@headlessui/react": [
         "src"
       ],
-      "workspace:*": [
+      "*": [
         "src/*",
         "node_modules/*"
       ]

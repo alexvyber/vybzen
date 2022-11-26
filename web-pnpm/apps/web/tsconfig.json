@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "moduleResolution": "nodenext",
     "baseUrl": ".",
     "paths": {
       "$/*": [
@@ -24,33 +23,12 @@
       "@lib/*": [
         "src/lib/*"
       ]
-    },
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "incremental": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
+    }
   },
   "exclude": [
     "node_modules"
   ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
+  "extends": "tsconfig/nextjs.strict.json",
   "include": [
     "next-env.d.ts",
     "**/*.ts",

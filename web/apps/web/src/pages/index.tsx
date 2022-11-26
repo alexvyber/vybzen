@@ -8,7 +8,7 @@ import katzen from "@img/katzen.png";
 import { useQuery } from "urql";
 import { graphql } from "@/gql/gql";
 
-// -------------------
+// --
 
 const homeQueryDocument = graphql(`
   query Home {
@@ -26,7 +26,23 @@ const homeQueryDocument = graphql(`
   }
 `);
 
-// -------------------
+const homeTwoQueryDocument = graphql(`
+  query HomeTwo {
+    home {
+      data {
+        attributes {
+          title
+          subtitle
+          techs {
+            name
+          }
+        }
+      }
+    }
+  }
+`);
+
+// --
 
 export default function Home() {
   const [result] = useQuery({ query: homeQueryDocument });
