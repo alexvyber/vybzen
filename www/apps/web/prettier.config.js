@@ -6,7 +6,7 @@ module.exports = {
   bracketSameLine: false,
   arrowParens: "avoid",
   plugins: [
-    require.resolve("prettier-plugin-organize-imports"),
+    // require.resolve("prettier-plugin-organize-imports"),
     require.resolve("prettier-plugin-tailwindcss"), // MUST BE LAST
   ],
 }

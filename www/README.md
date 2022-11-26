@@ -1,71 +1,16 @@
-# Katzen Turborepo starter
+# Turborepo starter
 
-```
-cd katzen
-nvm use
-```
-
-## Запуск
-
-```
-yarn install
-yarn dev
-```
-
-## CodeGen
-
-В папке web
-
-```
-yarn gen:watch
-```
-
-## TODO
-
-- tailwind-prettier-plugin +
-- graphql client +
-- modern module resolution ++/-
-- tweak configs +
-- develop some kind of dev conventions ...
-- layout "/app" - droped at least for 4-6 months due to unstability of new features of next 13
-- dark mode ...
-- now web uses graphql@^15 because of strapi-graphql dependent on version 15. Migrate both workspaces to graphql@^16 !!!
-- ladel installed
-- big cleanup +/-
-- docuemnt via mdx at least parts that can be difficult to understand
-- create docs folder where project will be documented
-- code splitting
-- next-auth! package is great. we just meed to makd sense pf it.
-- separate user management from other app
-- don't include default gql client
-- make possible to use urql and react query as gql plugin. Prefer react-query
-- make sense of rustywind
-- make use of .vscode folder
-- remove data.attributes from strapi's responses if possible
-- simplify
-- remove some configs
-- remove packages if possible
-- configure strapi
-- brand strapi
-- more configs in ladel
-- adopt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification)
-- add ci/cd
-- figure out how to sort package json only in own folders
-
-## NOTES
-
-pnpm just doesn't work, so yarn is used
+This is an official Yarn v1 starter turborepo.
 
 ## What's inside?
 
-TODO: what's inside
+This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
 
 ### Apps and Packages
 
-- `cms`: ...
-- `web`: ...
-- `play`: ...
-- `ui`: a stub React component library shared `web` application
+- `docs`: a [Next.js](https://nextjs.org/) app
+- `web`: another [Next.js](https://nextjs.org/) app
+- `ui`: a stub React component library shared by both `web` and `docs` applications
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
@@ -78,7 +23,6 @@ This turborepo has some additional tools already setup for you:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
-- [rustywind]()
 
 ### Build
 
@@ -100,7 +44,7 @@ yarn run dev
 
 ### Remote Caching
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
 
 By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
@@ -121,9 +65,9 @@ npx turbo link
 
 Learn more about the power of Turborepo:
 
-- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-- [Caching](https://turborepo.org/docs/core-concepts/caching)
-- [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+- [Pipelines](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
+- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
+- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
+- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
