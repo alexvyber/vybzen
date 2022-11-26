@@ -2,18 +2,6 @@
   "name": "one",
   "version": "0.0.0",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "apps/*",
-      "packages/*"
-    ],
-    "nohoist": [
-      "**/graphql",
-      "**/graphql/**",
-      "**/@strapi/plugin-graphql",
-      "**/@strapi/plugin-graphql/**"
-    ]
-  },
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
