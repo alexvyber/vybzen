@@ -1,0 +1,6 @@
+.tmp
+build
+dist/
+.cache/
+.next/
+.turbo
