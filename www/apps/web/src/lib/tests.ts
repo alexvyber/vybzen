@@ -1,13 +1,13 @@
 export default {
   tests: [
     {
-      name: 'Верстка Макета ',
-      description: 'Копируйте любые символы с легкостью на любом устройстве!',
+      name: "Верстка Макета ",
+      description: "Копируйте любые символы с легкостью на любом устройстве!",
       link: {
-        href: 'https://getchar.alexeycontent.space/',
-        label: 'getchar.alexeycontent.space',
+        href: "https://getchar.alexeycontent.space/",
+        label: "getchar.alexeycontent.space",
       },
-      imageSrc: '/images/test-images/test-one.jpg',
+      imageSrc: "/images/test-images/test-one.jpg",
     },
     // {
     //   name: 'PS+Shop',

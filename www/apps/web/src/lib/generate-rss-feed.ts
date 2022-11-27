@@ -1,20 +1,20 @@
-import ReactDOMServer from 'react-dom/server'
-import { Feed } from 'feed'
-import { mkdir, writeFile } from 'fs/promises'
+import { Feed } from "feed"
+import { mkdir, writeFile } from "fs/promises"
+import ReactDOMServer from "react-dom/server"
 
-import { getAllArticles } from './get-all-articles'
+import { getAllArticles } from "./get-all-articles"
 
 export async function generateRssFeed() {
   let articles = await getAllArticles()
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   let author = {
-    name: 'Spencer Sharp',
-    email: 'spencer@planetaria.tech',
+    name: "Spencer Sharp",
+    email: "spencer@planetaria.tech",
   }
 
   let feed = new Feed({
     title: author.name,
-    description: 'Your blog description',
+    description: "Your blog description",
     author,
     id: siteUrl,
     link: siteUrl,
@@ -30,7 +30,7 @@ export async function generateRssFeed() {
   for (let article of articles) {
     let url = `${siteUrl}/articles/${article.slug}`
     let html = ReactDOMServer.renderToStaticMarkup(
-      <article.component isRssFeed />
+      <article.component isRssFeed />,
     )
 
     feed.addItem({
@@ -45,9 +45,9 @@ export async function generateRssFeed() {
     })
   }
 
-  await mkdir('./public/rss', { recursive: true })
+  await mkdir("./public/rss", { recursive: true })
   await Promise.all([
-    writeFile('./public/rss/feed.xml', feed.rss2(), 'utf8'),
-    writeFile('./public/rss/feed.json', feed.json1(), 'utf8'),
+    writeFile("./public/rss/feed.xml", feed.rss2(), "utf8"),
+    writeFile("./public/rss/feed.json", feed.json1(), "utf8"),
   ])
 }

@@ -1,8 +1,8 @@
-import Head from 'next/head'
+import Head from "next/head"
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from "@/components/card"
+import { Section } from "@/components/section"
+import { SimpleLayout } from "@/components/simple-layout"
 
 function ToolsSection({ children, ...props }) {
   return (
@@ -76,7 +76,7 @@ export default function Uses() {
             <Tool title="Linux Ubuntu">
               Серверы... Ubuntu - это мой дефолт для сервера. Ребятки из
               Canonical сделали работу с этим дистрибутивом на сервере очень
-              простым.{' '}
+              простым.{" "}
             </Tool>
           </ToolsSection>
           <ToolsSection title="Инструменты Разработки">

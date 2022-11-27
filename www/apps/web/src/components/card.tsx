@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import clsx from 'clsx'
-import Image from 'next/image'
+import clsx from "clsx"
+import Image from "next/image"
+import Link from "next/link"
 
 function ChevronRightIcon(props) {
   return (
@@ -15,10 +15,10 @@ function ChevronRightIcon(props) {
   )
 }
 
-export function Card({ as: Component = 'div', className, children }) {
+export function Card({ as: Component = "div", className, children }) {
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
+      className={clsx(className, "group relative flex flex-col items-start")}
     >
       {children}
     </Component>
@@ -50,7 +50,7 @@ Card.Link = function CardLink({ children, ...props }) {
 }
 
 Card.Title = function CardTitle({
-  as: Component = 'h2',
+  as: Component = "h2",
   href,
   children,
   target,
@@ -59,8 +59,8 @@ Card.Title = function CardTitle({
   return (
     <Component
       className={clsx(
-        'text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100',
-        className
+        "text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100",
+        className,
       )}
     >
       {href ? (
@@ -75,15 +75,15 @@ Card.Title = function CardTitle({
 }
 
 Card.Description = function CardDescription({
-  as: Component = 'p',
+  as: Component = "p",
   children,
   className,
 }) {
   return (
     <Component
       className={clsx(
-        'relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400',
-        className
+        "relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400",
+        className,
       )}
     >
       {children}
@@ -104,7 +104,7 @@ Card.Cta = function CardCta({ children }) {
 }
 
 Card.Eyebrow = function CardEyebrow({
-  as: Component = 'p',
+  as: Component = "p",
   decorate = false,
   className,
   children,
@@ -114,8 +114,8 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={clsx(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500',
-        decorate && 'pl-3.5'
+        "relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
+        decorate && "pl-3.5",
       )}
       {...props}
     >

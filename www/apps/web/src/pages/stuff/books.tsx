@@ -1,10 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/future/image'
+import Head from "next/head"
+import Image from "next/image"
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import { Component } from 'react'
+import { Card } from "@/components/card"
+import { Section } from "@/components/section"
+import { SimpleLayout } from "@/components/simple-layout"
 
 function ToolsSection({ children, ...props }) {
   return (
@@ -46,135 +45,135 @@ function Book({ title, href, imageSrc, children }) {
 
 const books = [
   {
-    subject: 'TypeScript',
+    subject: "TypeScript",
     books: [
       {
         title:
-          'Learning TypeScript Enhance Your Web Development Skills Using Type-Safe JavaScript',
+          "Learning TypeScript Enhance Your Web Development Skills Using Type-Safe JavaScript",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://www.learningtypescript.com/',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://www.learningtypescript.com/",
         read: true,
-        imageSrc: 'learning-typescript.png',
-        review: 'asdfadsf',
-        status: 'working',
+        imageSrc: "learning-typescript.png",
+        review: "asdfadsf",
+        status: "working",
       },
     ],
   },
   {
-    subject: 'JS-related',
+    subject: "JS-related",
     books: [
       {
         title:
-          'Designing Web APIs with Strapi Get started with the Strapi headless CMS by building a complete learning management system API',
+          "Designing Web APIs with Strapi Get started with the Strapi headless CMS by building a complete learning management system API",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://www.packtpub.com/product/Designing-Web-APIs-with-Strapi/9781800560635',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://www.packtpub.com/product/Designing-Web-APIs-with-Strapi/9781800560635",
         read: true,
-        imageSrc: 'strapi-cover.png',
-        review: 'asdfadsf',
-        status: 'done',
+        imageSrc: "strapi-cover.png",
+        review: "asdfadsf",
+        status: "done",
       },
     ],
   },
   {
-    subject: 'Non-Programming',
+    subject: "Non-Programming",
     books: [
       {
-        title: 'Speechless: Controlling Words, Controlling Minds',
+        title: "Speechless: Controlling Words, Controlling Minds",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://www.amazon.com/Speechless-Controlling-Words-Minds/dp/1684510821',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://www.amazon.com/Speechless-Controlling-Words-Minds/dp/1684510821",
         read: true,
-        imageSrc: 'speechless.jpg',
-        review: 'asdfadsf',
-        status: 'done',
+        imageSrc: "speechless.jpg",
+        review: "asdfadsf",
+        status: "done",
       },
       {
         title:
-          'Ego, Authority, Failure: Using Emotional Intelligence Like a Hostage Negotiator to Succeed as a Leader',
+          "Ego, Authority, Failure: Using Emotional Intelligence Like a Hostage Negotiator to Succeed as a Leader",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://www.amazon.com/Speechless-Controlling-Words-Minds/dp/1684510821',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://www.amazon.com/Speechless-Controlling-Words-Minds/dp/1684510821",
         read: true,
-        imageSrc: 'ego-authority.png',
-        review: 'asdfadsf',
-        status: 'working',
+        imageSrc: "ego-authority.png",
+        review: "asdfadsf",
+        status: "working",
       },
       {
         title:
-          'The End of the World Is Just the Beginning: Mapping the Collapse of Globalization Hardcover',
+          "The End of the World Is Just the Beginning: Mapping the Collapse of Globalization Hardcover",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://www.amazon.com/End-World-Just-Beginning-Globalization/dp/006323047X',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://www.amazon.com/End-World-Just-Beginning-Globalization/dp/006323047X",
         read: true,
-        imageSrc: 'the-end-of-the-world.png',
-        review: 'asdfadsf',
-        status: 'done',
+        imageSrc: "the-end-of-the-world.png",
+        review: "asdfadsf",
+        status: "done",
       },
       {
         title:
-          'Never Split the Difference: Negotiating As If Your Life Depended On It',
+          "Never Split the Difference: Negotiating As If Your Life Depended On It",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://www.amazon.com/Never-Split-Difference-Negotiating-Depended-ebook/dp/B014DUR7L2',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://www.amazon.com/Never-Split-Difference-Negotiating-Depended-ebook/dp/B014DUR7L2",
         read: true,
-        imageSrc: 'never-split.jpg',
-        review: 'asdfadsf',
-        status: 'done',
+        imageSrc: "never-split.jpg",
+        review: "asdfadsf",
+        status: "done",
       },
       {
-        title: 'Spiral Dynamics: Mastering Values, Leadership and Change',
+        title: "Spiral Dynamics: Mastering Values, Leadership and Change",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://www.amazon.com/Spiral-Dynamics-Mastering-Values-Leadership/dp/1405133562',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://www.amazon.com/Spiral-Dynamics-Mastering-Values-Leadership/dp/1405133562",
         read: true,
-        imageSrc: 'spiral-dynamics.png',
-        review: 'asdfadsf',
-        status: 'done',
+        imageSrc: "spiral-dynamics.png",
+        review: "asdfadsf",
+        status: "done",
       },
     ],
   },
   {
-    subject: 'Elixir',
+    subject: "Elixir",
     books: [
       {
         title: `Programming Phoenix 1.4
           Productive |> Reliable |> Fast
           `,
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/",
         read: true,
-        imageSrc: 'programming-phoenix-cover.jpg',
-        review: 'asdfadsf',
-        status: 'done',
+        imageSrc: "programming-phoenix-cover.jpg",
+        review: "asdfadsf",
+        status: "done",
       },
       {
-        title: 'Programming Phoenix LiveView',
+        title: "Programming Phoenix LiveView",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://pragprog.com/titles/liveview/programming-phoenix-liveview/',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://pragprog.com/titles/liveview/programming-phoenix-liveview/",
         read: true,
-        imageSrc: 'programming-phoenix-liveview.png',
-        review: 'asdfadsf',
-        status: 'done',
+        imageSrc: "programming-phoenix-liveview.png",
+        review: "asdfadsf",
+        status: "done",
       },
     ],
   },
   {
-    subject: 'Other...',
+    subject: "Other...",
     books: [
       {
         title:
-          'Learning the vi and Vim Editors. Power and Agility Beyond Just Text Editing',
+          "Learning the vi and Vim Editors. Power and Agility Beyond Just Text Editing",
         description:
-          'Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf',
-        href: 'https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/',
+          "Lorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdfLorema dfasd fasdf asdf adsf adsf asdf",
+        href: "https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/",
         read: true,
-        imageSrc: 'vim-cover.png',
-        review: 'asdfadsf',
-        status: 'done',
+        imageSrc: "vim-cover.png",
+        review: "asdfadsf",
+        status: "done",
       },
     ],
   },
@@ -199,9 +198,9 @@ export default function Uses() {
             В Работе
           </h2>
           <main className="space-y-20 ">
-            {books.map((collection) => {
+            {books.map(collection => {
               const booksToRender = collection.books.filter(
-                (book) => book.status === 'working'
+                book => book.status === "working",
               )
 
               return booksToRender?.length > 0 ? (
@@ -209,8 +208,8 @@ export default function Uses() {
                   title={collection.subject}
                   key={collection.subject}
                 >
-                  {collection.books.map((item) =>
-                    item.status === 'working' ? (
+                  {collection.books.map(item =>
+                    item.status === "working" ? (
                       <Book
                         key={item.href}
                         title={item.title}
@@ -219,7 +218,7 @@ export default function Uses() {
                       >
                         {item.description}
                       </Book>
-                    ) : null
+                    ) : null,
                   )}
                 </ToolsSection>
               ) : null
@@ -231,9 +230,9 @@ export default function Uses() {
             Закончил
           </h2>
           <main className="space-y-20">
-            {books.map((collection) => {
+            {books.map(collection => {
               const booksToRender = collection.books.filter(
-                (book) => book.status === 'done'
+                book => book.status === "done",
               )
 
               return booksToRender?.length > 0 ? (
@@ -241,8 +240,8 @@ export default function Uses() {
                   title={collection.subject}
                   key={collection.subject}
                 >
-                  {collection.books.map((item) =>
-                    item.status === 'done' ? (
+                  {collection.books.map(item =>
+                    item.status === "done" ? (
                       <Book
                         key={item.href}
                         title={item.title}
@@ -251,7 +250,7 @@ export default function Uses() {
                       >
                         {item.description}
                       </Book>
-                    ) : null
+                    ) : null,
                   )}
                 </ToolsSection>
               ) : null

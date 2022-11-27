@@ -1,6 +1,6 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-import { Container } from '@/components/container'
+import { Container } from "@/components/container"
 
 function NavLink({ href, children }) {
   return (
@@ -27,7 +27,7 @@ export function Footer() {
                 <NavLink href="/uses">Мой Стаф</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Alex Vyber{' '}
+                &copy; {new Date().getFullYear()} Alex Vyber{" "}
               </p>
             </div>
           </Container.Inner>

@@ -1,13 +1,13 @@
-import Head from 'next/head'
+import Head from "next/head"
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from "@/components/card"
+import { Section } from "@/components/section"
+import { SimpleLayout } from "@/components/simple-layout"
 
-import YouTubeLogo from '../../images/logos/youtube.svg'
-import BlogLogo from '../../images/logos/blog.svg'
+import BlogLogo from "../../images/logos/blog.svg"
+import YouTubeLogo from "../../images/logos/youtube.svg"
 
-import Image from 'next/future/image'
+import Image from "next/image"
 
 function ToolsSection({ children, ...props }) {
   return (
@@ -48,75 +48,75 @@ const bloggers = [
   // Learn With Jason
 
   {
-    title: 'Кодинг',
+    title: "Кодинг",
     items: [
       {
-        title: 'Theo - ping․gg',
-        href: 'https://www.youtube.com/c/TheoBrowne1017',
+        title: "Theo - ping․gg",
+        href: "https://www.youtube.com/c/TheoBrowne1017",
         description:
           'Theo для меня почти образец человека, кто "get shit done". Он довольно много бугуртит, часто - по делу.',
         logoIcon: YouTubeLogo,
       },
       {
-        title: 'Overreacted | Dan Abramov',
-        href: 'https://overreacted.io/',
+        title: "Overreacted | Dan Abramov",
+        href: "https://overreacted.io/",
         description:
-          'Персональный блог Дена Абрамова. Человек, сделавший значимый вклад в React и виновный в появлении Redux 🙃',
+          "Персональный блог Дена Абрамова. Человек, сделавший значимый вклад в React и виновный в появлении Redux 🙃",
         logoIcon: BlogLogo,
       },
       {
-        title: 'ThePrimeagen',
-        href: 'https://www.youtube.com/c/ThePrimeagen',
+        title: "ThePrimeagen",
+        href: "https://www.youtube.com/c/ThePrimeagen",
         description:
           'ThePrimeagen любит NeoVim и "blazingly fasy software". Смотреть его — почти всегда офигенно весело.',
         logoIcon: YouTubeLogo,
       },
       {
-        title: 'Fireship',
-        href: 'https://www.youtube.com/c/Fireship',
+        title: "Fireship",
+        href: "https://www.youtube.com/c/Fireship",
         description:
-          'Просто большой и жирный лайк! Если по какой-то причине вы еще не подписались на канал, то сейчас самое время!',
+          "Просто большой и жирный лайк! Если по какой-то причине вы еще не подписались на канал, то сейчас самое время!",
         logoIcon: YouTubeLogo,
       },
       {
-        title: 'Jack Herrington',
-        href: 'https://www.youtube.com/c/JackHerrington',
+        title: "Jack Herrington",
+        href: "https://www.youtube.com/c/JackHerrington",
         description:
-          'Хороший канал для фронтендов. Очень широкий набор тем и много видео на продвинутые темы. Регулярно выходят видео по свежим технологиям.',
+          "Хороший канал для фронтендов. Очень широкий набор тем и много видео на продвинутые темы. Регулярно выходят видео по свежим технологиям.",
         logoIcon: YouTubeLogo,
       },
       {
-        title: 'TJ DeVries',
-        href: 'https://www.youtube.com/c/TJDeVries',
+        title: "TJ DeVries",
+        href: "https://www.youtube.com/c/TJDeVries",
         description:
-          'TJ - core NeoVim developer. Когда я хочу узнать что-нибудь про NeoVim, я в первую очередь чекаю TJ',
+          "TJ - core NeoVim developer. Когда я хочу узнать что-нибудь про NeoVim, я в первую очередь чекаю TJ",
         logoIcon: YouTubeLogo,
       },
       {
-        title: 'TJ DeVries',
-        href: 'https://www.youtube.com/c/TJDeVries',
+        title: "TJ DeVries",
+        href: "https://www.youtube.com/c/TJDeVries",
         description:
-          'TJ - core NeoVim developer. Когда я хочу узнать что-нибудь про NeoVim, я в первую очередь чекаю TJ',
+          "TJ - core NeoVim developer. Когда я хочу узнать что-нибудь про NeoVim, я в первую очередь чекаю TJ",
         logoIcon: YouTubeLogo,
       },
     ],
   },
   {
-    title: 'Не Кодинг',
+    title: "Не Кодинг",
 
     items: [
       {
-        title: 'Chris Williamson',
-        href: 'https://www.youtube.com/c/ModernWisdomPodcast',
+        title: "Chris Williamson",
+        href: "https://www.youtube.com/c/ModernWisdomPodcast",
         description:
-          'Для меня это один из лучших подкастов! Гости Криса - это выдающиеся люди современности. И они рассказывают ему дофигище полезной инфы!',
+          "Для меня это один из лучших подкастов! Гости Криса - это выдающиеся люди современности. И они рассказывают ему дофигище полезной инфы!",
         logoIcon: YouTubeLogo,
       },
       {
-        title: 'Ben Awad',
-        href: 'https://www.youtube.com/c/BenAwad97',
+        title: "Ben Awad",
+        href: "https://www.youtube.com/c/BenAwad97",
         description:
-          'Coffeezilla в очень смешной манере рассказывает про скам в интернете. Приемушественно, Youtube и крипта. Hilarious - лучшее слово, чтобы описать его контент.',
+          "Coffeezilla в очень смешной манере рассказывает про скам в интернете. Приемушественно, Youtube и крипта. Hilarious - лучшее слово, чтобы описать его контент.",
         logoIcon: YouTubeLogo,
       },
     ],
@@ -138,10 +138,10 @@ export default function Uses() {
         intro="Довольно часто короткий видос даем мне столько же инсайта, сколько глава из книги..."
       >
         <div className="space-y-20">
-          {bloggers.map((platform) => {
+          {bloggers.map(platform => {
             return (
               <ToolsSection title={platform.title} key={platform.title}>
-                {platform.items.map((item) => (
+                {platform.items.map(item => (
                   <Tool
                     title={item.title}
                     href={item.href}

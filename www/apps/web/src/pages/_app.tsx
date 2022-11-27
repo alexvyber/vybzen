@@ -1,22 +1,23 @@
+import type { AppProps } from "next/app"
+import { useEffect, useRef } from "react"
+
 import "@css/globals.css"
 
-import 'focus-visible'
+import "focus-visible"
 
 import { createClient, Provider } from "urql"
 
-import { Footer } from '@/components/footer'
-import { Header } from '@/components/header'
+import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
 
 const client = createClient({
   url: "http://127.0.0.1:7777/graphql",
 })
 
-import type { AppProps } from "next/app"
-import { useEffect, useRef } from "react"
 
 
-function usePrevious(value) {
-  let ref = useRef()
+function usePrevious(value: string) {
+  let ref = useRef<typeof value>()
 
   useEffect(() => {
     ref.current = value
@@ -27,6 +28,7 @@ function usePrevious(value) {
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   let previousPathname = usePrevious(router.pathname)
+
   return (
     <Provider value={client}>
       <div className="fixed inset-0 flex justify-center sm:px-8">

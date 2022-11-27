@@ -1,20 +1,15 @@
-import Image from 'next/future/image'
-import Head from 'next/head'
-import Link from 'next/link'
-import clsx from 'clsx'
+import clsx from "clsx"
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
 
-import { Container } from '@/components/Container'
-import {
-  TwitterIcon,
-  InstagramIcon,
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/images/avatar.jpg'
+import { Container } from "@/components/container"
+import { GitHubIcon, LinkedInIcon } from "@/components/social-icons"
+import portraitImage from "@/images/avatar.jpg"
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
-    <li className={clsx(className, 'flex')}>
+    <li className={clsx(className, "flex")}>
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-orange-500 dark:text-zinc-200 dark:hover:text-orange-500"
@@ -56,12 +51,12 @@ export default function About() {
               />
             </div>
           </div>
-          
+
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-             Привет! Меня зовут Соколов Алексей. Пишу софт и делаю графику.
+              Привет! Меня зовут Соколов Алексей. Пишу софт и делаю графику.
             </h1>
-            
+
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 Две вещи, которые постоянно в моем фокусе: сделать так, чтобы

@@ -1,14 +1,12 @@
-import Image from 'next/future/image'
-import Head from 'next/head'
+import Head from "next/head"
 
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import { getNegativePatternsAsPositive } from 'fast-glob/out/managers/tasks'
 
-import { getAllTests } from '@/lib/getAllTests'
+import { Card } from "@/components/card"
+import { SimpleLayout } from "@/components/simple-layout"
 
-import Tests from '@/lib/tests.ts'
-import { Article } from '../articles'
+import { getAllTests } from "@/lib/get-all-tests"
+
+import { Article } from "../articles"
 
 const Test = ({ test }) => {
   return (
@@ -35,7 +33,7 @@ export default function Projects({ tests }) {
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
-            {tests.map((test) => (
+            {tests.map(test => (
               <Article
                 key={test.slug}
                 article={test}

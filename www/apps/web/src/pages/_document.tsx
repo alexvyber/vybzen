@@ -40,7 +40,7 @@ const modeScript = `
     disableTransitionsTemporarily()
     updateMode()
   }
-`c
+`
 
 class MyDocument extends Document {
   static async getInitialProps(
@@ -54,10 +54,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html className="h-full antialiased" lang="ru">
-        <Head >
-        <script dangerouslySetInnerHTML={{ __html: modeScript }} />
+        <Head>
+          <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         </Head>
-        <body>
+        <body className="flex h-full flex-col bg-slate-50 dark:bg-black">
           <Main />
           <NextScript />
         </body>

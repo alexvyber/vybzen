@@ -1,21 +1,17 @@
-import Image from 'next/future/image'
-import Head from 'next/head'
+import Head from "next/head"
+import Image from "next/image"
 
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/airbnb.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import { Card } from "@/components/card"
+import { SimpleLayout } from "@/components/simple-layout"
+import logoPlanetaria from "@/images/logos/planetaria.svg"
 
 const projects = [
   {
-    name: 'GetChar',
-    description: 'Копируйте любые символы с легкостью на любом устройстве!',
+    name: "GetChar",
+    description: "Копируйте любые символы с легкостью на любом устройстве!",
     link: {
-      href: 'https://getchar.alexeycontent.space/',
-      label: 'getchar.alexeycontent.space',
+      href: "https://getchar.alexeycontent.space/",
+      label: "getchar.alexeycontent.space",
     },
     logo: logoPlanetaria,
   },
@@ -77,7 +73,7 @@ export default function Projects() {
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {projects.map((project) => (
+          {projects.map(project => (
             <Card as="li" key={project.name}>
               <div
                 className="relative z-10 flex h-12 w-12 items-center

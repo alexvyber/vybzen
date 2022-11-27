@@ -1,11 +1,12 @@
-import Head from 'next/head'
+import Head from "next/head"
 
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { SimpleLayout } from "@/components/simple-layout"
+import { Octokit } from "octokit"
 
 function Commits({ commits }) {
   return (
     <ul role="list">
-      {commits.map((commit) => (
+      {commits.map(commit => (
         <li
           key={commit.sha}
           className="relative rounded-xl bg-white py-5 px-4 
@@ -32,12 +33,12 @@ function Commits({ commits }) {
               className="flex-shrink-0 whitespace-nowrap text-sm text-zinc-600 dark:text-zinc-300"
             >
               {new Date(commit.commit.committer.date).toLocaleDateString(
-                'ru-RU',
+                "ru-RU",
                 {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                }
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                },
               )}
             </time>
           </div>
@@ -67,14 +68,13 @@ export default function Days({ commits }) {
 }
 
 const TOKEN = process.env.GH_TOKEN
-import { Octokit, App } from 'octokit'
 
 async function getCommits() {
   const octokit = new Octokit({ auth: TOKEN })
 
-  const { data } = await octokit.request('GET /repos/{owner}/{repo}/commits', {
-    owner: 'alexvyber',
-    repo: '1000DaysOfCode',
+  const { data } = await octokit.request("GET /repos/{owner}/{repo}/commits", {
+    owner: "alexvyber",
+    repo: "1000DaysOfCode",
   })
 
   // console.log(data)
