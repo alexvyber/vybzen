@@ -6,7 +6,7 @@ import { useRouter } from "next/router"
 
 import { Container } from "@/components/container"
 import avatarImage from "@/images/avatar.jpg"
-import { Fragment, useEffect, useRef, useState } from "react"
+import React, { Fragment, useEffect, useRef } from "react"
 
 const navLinks = [
   {
@@ -44,7 +44,7 @@ const navLinks = [
   },
 ]
 
-function CloseIcon(props) {
+function CloseIcon(props: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -59,7 +59,7 @@ function CloseIcon(props) {
   )
 }
 
-function ChevronDownIcon(props) {
+function ChevronDownIcon(props: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
       <path
@@ -73,7 +73,7 @@ function ChevronDownIcon(props) {
   )
 }
 
-function SunIcon(props) {
+function SunIcon(props: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ function SunIcon(props) {
   )
 }
 
-function MoonIcon(props) {
+function MoonIcon(props: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -105,7 +105,10 @@ function MoonIcon(props) {
   )
 }
 
-function MobileNavItem({ href, children }) {
+function MobileNavItem({
+  href,
+  children,
+}: React.PropsWithChildren<{ href: string }>) {
   return (
     <li>
       <Popover.Button as={Link} href={href} className="block py-2">
@@ -195,13 +198,19 @@ function MobileNavigation(props) {
   )
 }
 
-function NavItem({ href, children, onClose }) {
+function NavItem({
+  href,
+  children,
+  onClose,
+}: React.PropsWithChildren<{ href: string; onClose?: () => void }>) {
   let isActive = useRouter().pathname === href
 
   return (
     <li>
       <Link
-        onClick={onClose ? () => onClose() : undefined}
+        onClick={() => {
+          typeof onClose === "function" && onClose()
+        }}
         href={href}
         className={clsx(
           "relative block px-3 py-2 transition ",
@@ -210,20 +219,28 @@ function NavItem({ href, children, onClose }) {
             : "hover:text-orange-500 dark:hover:text-orange-400",
         )}
       >
-        {/* <span className="block w-full"> */}
-        {children}
-        {/* </span> */}
-        {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-orange-500/0 via-orange-500/40 to-orange-500/0 dark:from-orange-400/0 dark:via-orange-400/40 dark:to-orange-400/0" />
-        )}
+        <>
+          <span className="block w-full">{children}</span>
+          {isActive && (
+            <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-orange-500/0 via-orange-500/40 to-orange-500/0 dark:from-orange-400/0 dark:via-orange-400/40 dark:to-orange-400/0" />
+          )}
+        </>
       </Link>
     </li>
   )
 }
 
-function DropDownNavItemsGroup({ title, href, links }) {
+function DropDownNavItemsGroup({
+  title,
+  href,
+  links,
+}: {
+  title: string
+  href: string
+  links: any
+}) {
   let isActive = `/${useRouter().pathname.split("/")[1]}` === href
-  const [isShowing, setIsShowing] = useState(false)
+  // const [isShowing, setIsShowing] = useState(false)
 
   return (
     <Popover className="relative">
@@ -272,7 +289,7 @@ function DropDownNavItemsGroup({ title, href, links }) {
   )
 }
 
-function DesktopNavigation(props) {
+function DesktopNavigation(props: React.HTMLAttributes<HTMLElement>) {
   return (
     <nav {...props}>
       <ul

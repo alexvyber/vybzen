@@ -1,6 +1,8 @@
 import clsx from "clsx"
 import { forwardRef } from "react"
 
+// FIXME: Make sense of its component
+
 const OuterContainer = forwardRef(function OuterContainer(
   { className, children, ...props },
   ref,

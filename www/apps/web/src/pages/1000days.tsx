@@ -77,8 +77,6 @@ async function getCommits() {
     repo: "1000DaysOfCode",
   })
 
-  // console.log(data)
-
   // const repo = "https://github.com/alexvyber/1000daysofcode.git";
   // // Aray for dev purposes
   // const testArray: Commit[] = [];

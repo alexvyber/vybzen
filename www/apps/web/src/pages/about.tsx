@@ -6,8 +6,20 @@ import Link from "next/link"
 import { Container } from "@/components/container"
 import { GitHubIcon, LinkedInIcon } from "@/components/social-icons"
 import portraitImage from "@/images/avatar.jpg"
+import React from "react"
 
-function SocialLink({ className, href, children, icon: Icon }) {
+interface SocilLinkProps {
+  className: string
+  href: string
+  icon: React.ComponentType<{ className: string }>
+}
+
+function SocialLink({
+  className,
+  href,
+  children,
+  icon: Icon,
+}: React.PropsWithChildren<SocilLinkProps>) {
   return (
     <li className={clsx(className, "flex")}>
       <Link
@@ -21,7 +33,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
   )
 }
 
-function MailIcon(props) {
+function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path

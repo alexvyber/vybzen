@@ -5,7 +5,7 @@ import { Container } from "@/components/container"
 import { Prose } from "@/components/prose"
 import { formatDate } from "@/lib/format-date"
 
-function ArrowLeftIcon(props) {
+function ArrowLeftIcon(props: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -18,12 +18,18 @@ function ArrowLeftIcon(props) {
   )
 }
 
+interface Props {
+  meta: any
+  isRssFeed?: boolean
+  previousPathname: string
+}
+
 export function ArticleLayout({
   children,
   meta,
   isRssFeed = false,
   previousPathname,
-}) {
+}: React.PropsWithChildren<Props>) {
   let router = useRouter()
 
   if (isRssFeed) {

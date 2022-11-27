@@ -14,8 +14,6 @@ const client = createClient({
   url: "http://127.0.0.1:7777/graphql",
 })
 
-
-
 function usePrevious(value: string) {
   let ref = useRef<typeof value>()
 

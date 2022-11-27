@@ -1,31 +1,23 @@
-import Image from 'next/image'
-import Head from 'next/head'
-import Link from 'next/link'
-import clsx from 'clsx'
+import clsx from "clsx"
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
 
-import { Button } from '@/components/button'
-import { Card } from '@/components/card'
-import { Container } from '@/components/container'
-import {
-  TwitterIcon,
-  InstagramIcon,
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/social-icons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import { Button } from "@/components/button"
+import { Card } from "@/components/card"
+import { Container } from "@/components/container"
+import { GitHubIcon, LinkedInIcon } from "@/components/social-icons"
+import logoPlanetaria from "@/images/logos/planetaria.svg"
+import image1 from "@/images/photos/image-1.jpg"
+import image2 from "@/images/photos/image-2.jpg"
+import image3 from "@/images/photos/image-3.jpg"
+import image4 from "@/images/photos/image-4.jpg"
+import image5 from "@/images/photos/image-5.jpg"
 // import { generateRssFeed } from '@/lib/generate-rss-feed'
-import { getAllArticles } from '@/lib/get-all-articles'
-import { formatDate } from '@/lib/format-date'
+import { formatDate } from "@/lib/format-date"
+import { getAllArticles } from "@/lib/get-all-articles"
 
-function MailIcon(props) {
+function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -48,7 +40,7 @@ function MailIcon(props) {
   )
 }
 
-function BriefcaseIcon(props) {
+function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -71,7 +63,7 @@ function BriefcaseIcon(props) {
   )
 }
 
-function ArrowDownIcon(props) {
+function ArrowDownIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -139,36 +131,36 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
+      company: "Some Company",
+      title: "CEO",
       logo: logoPlanetaria,
-      start: '2019',
+      start: "2022",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear(),
       },
     },
-    {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
-    },
-    {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
-    },
+    // {
+    //   company: "Airbnb",
+    //   title: "Product Designer",
+    //   logo: logoAirbnb,
+    //   start: "2014",
+    //   end: "2019",
+    // },
+    // {
+    //   company: "Facebook",
+    //   title: "iOS Software Engineer",
+    //   logo: logoFacebook,
+    //   start: "2011",
+    //   end: "2014",
+    // },
+    // {
+    //   company: "Starbucks",
+    //   title: "Shift Supervisor",
+    //   logo: logoStarbucks,
+    //   start: "2008",
+    //   end: "2011",
+    // },
   ]
 
   return (
@@ -201,8 +193,8 @@ function Resume() {
               >
                 <time dateTime={role.start.dateTime ?? role.start}>
                   {role.start.label ?? role.start}
-                </time>{' '}
-                <span aria-hidden="true">—</span>{' '}
+                </time>{" "}
+                <span aria-hidden="true">—</span>{" "}
                 <time dateTime={role.end.dateTime ?? role.end}>
                   {role.end.label ?? role.end}
                 </time>
@@ -211,7 +203,7 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button href="#" intent="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -220,7 +212,7 @@ function Resume() {
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let rotations = ["rotate-2", "-rotate-2", "rotate-2", "rotate-2", "-rotate-2"]
 
   return (
     <div className="mt-16 sm:mt-20">
@@ -229,8 +221,8 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
+              "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl",
+              rotations[imageIndex % rotations.length],
             )}
           >
             <Image
@@ -292,13 +284,13 @@ export default function Home({ articles }) {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
+            {articles.map(article => (
               <Article key={article.slug} article={article} />
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             {/* <Newsletter /> */}
-            {/* <Resume /> */}
+            <Resume />
           </div>
         </div>
       </Container>

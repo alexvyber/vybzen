@@ -1,6 +1,5 @@
 import Head from "next/head"
 
-
 import { Card } from "@/components/card"
 import { SimpleLayout } from "@/components/simple-layout"
 

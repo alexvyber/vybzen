@@ -1,8 +1,19 @@
 import clsx from "clsx"
 import Image from "next/image"
-import Link from "next/link"
+import Link, { LinkProps } from "next/link"
+import React from "react"
 
-function ChevronRightIcon(props) {
+// --
+
+interface AsComponent {
+  as?: keyof JSX.IntrinsicElements
+}
+
+interface ClassName {
+  className?: string
+}
+
+function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -15,7 +26,11 @@ function ChevronRightIcon(props) {
   )
 }
 
-export function Card({ as: Component = "div", className, children }) {
+export function Card({
+  as: Component = "div",
+  className,
+  children,
+}: React.PropsWithChildren<AsComponent & ClassName>) {
   return (
     <Component
       className={clsx(className, "group relative flex flex-col items-start")}
@@ -25,7 +40,9 @@ export function Card({ as: Component = "div", className, children }) {
   )
 }
 
-Card.Image = function CardImage({ imageSrc }) {
+// --
+
+Card.Image = function CardImage({ imageSrc }: { imageSrc: string }) {
   return (
     <Image
       src={imageSrc}
@@ -37,7 +54,13 @@ Card.Image = function CardImage({ imageSrc }) {
   )
 }
 
-Card.Link = function CardLink({ children, ...props }) {
+Card.Link = function CardLink({
+  children,
+  target,
+  ...props
+}: React.PropsWithChildren<
+  { target?: React.HTMLAttributeAnchorTarget } & LinkProps
+>) {
   return (
     <>
       <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
@@ -51,11 +74,17 @@ Card.Link = function CardLink({ children, ...props }) {
 
 Card.Title = function CardTitle({
   as: Component = "h2",
-  href,
-  children,
-  target,
   className,
-}) {
+  children,
+  href,
+  ...linkProps
+}: React.PropsWithChildren<
+  {
+    target: Extract<React.HTMLAttributeAnchorTarget, string>
+  } & AsComponent &
+    ClassName &
+    Omit<LinkProps, "as">
+>) {
   return (
     <Component
       className={clsx(
@@ -64,7 +93,7 @@ Card.Title = function CardTitle({
       )}
     >
       {href ? (
-        <Card.Link href={href} target={target}>
+        <Card.Link href={href} {...linkProps}>
           {children}
         </Card.Link>
       ) : (
@@ -78,7 +107,7 @@ Card.Description = function CardDescription({
   as: Component = "p",
   children,
   className,
-}) {
+}: React.PropsWithChildren<ClassName & AsComponent>) {
   return (
     <Component
       className={clsx(
@@ -91,7 +120,7 @@ Card.Description = function CardDescription({
   )
 }
 
-Card.Cta = function CardCta({ children }) {
+Card.Cta = function CardCta({ children }: React.PropsWithChildren<unknown>) {
   return (
     <div
       aria-hidden="true"
@@ -109,7 +138,7 @@ Card.Eyebrow = function CardEyebrow({
   className,
   children,
   ...props
-}) {
+}: React.PropsWithChildren<{ decorate: boolean } & ClassName & AsComponent>) {
   return (
     <Component
       className={clsx(

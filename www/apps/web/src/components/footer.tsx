@@ -2,7 +2,10 @@ import Link from "next/link"
 
 import { Container } from "@/components/container"
 
-function NavLink({ href, children }) {
+function NavLink({
+  href,
+  children,
+}: React.PropsWithChildren<{ href: string }>) {
   return (
     <Link
       href={href}

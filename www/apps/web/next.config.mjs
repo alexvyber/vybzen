@@ -1,10 +1,10 @@
-import nextMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-import rehypePrism from '@mapbox/rehype-prism'
+import rehypePrism from "@mapbox/rehype-prism"
+import nextMDX from "@next/mdx"
+import remarkGfm from "remark-gfm"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['tsx', 'mdx'],
+  pageExtensions: ["tsx", "mdx"],
   reactStrictMode: true,
   swcMinify: true,
   typescript: {
@@ -13,6 +13,9 @@ const nextConfig = {
     // your project has type errors.
     // !! WARN !!
     ignoreBuildErrors: true,
+  },
+  images: {
+    domains: ["localhost"],
   },
   experimental: {
     transpilePackages: ["ui"],
