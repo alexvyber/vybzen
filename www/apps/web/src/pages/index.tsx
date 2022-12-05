@@ -5,7 +5,7 @@ import Link from "next/link"
 
 import { Card } from "@/components/card"
 import { Container } from "@/components/container"
-import { GitHubIcon, LinkedInIcon } from "@/components/social-icons"
+// import { GitHubIcon, LinkedInIcon } from "@/components/social-icons"
 import logoPlanetaria from "@/images/logos/planetaria.svg"
 import image1 from "@/images/photos/image-1.jpg"
 import image2 from "@/images/photos/image-2.jpg"
@@ -16,6 +16,7 @@ import { ButtonLink, Button } from "ui"
 // import { generateRssFeed } from '@/lib/generate-rss-feed'
 import { formatDate } from "@/lib/format-date"
 import { getAllArticles } from "@/lib/get-all-articles"
+import { GitHubIcon, LinkedInIcon } from "icons"
 
 function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

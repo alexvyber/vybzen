@@ -7,7 +7,7 @@ import { buttonStyles, type Props as ButtonProps } from "./button"
 
 export interface Props extends ButtonProps {
   href: string
-  as: keyof Pick<JSX.IntrinsicElements, "a"> | typeof Link
+  as: "a" | typeof Link
 }
 
 export const ButtonLink = ({

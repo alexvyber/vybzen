@@ -1,0 +1,5 @@
+{
+  "exclude": ["dist", "build", "node_modules", ".turbo"],
+  "extends": "tsconfig/react-library.json",
+  "include": ["."]
+}
