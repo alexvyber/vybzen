@@ -30,8 +30,8 @@ export default function Projects({ tests }) {
         title="Мне дают тестовые — я их выполняю..."
         // intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
       >
-        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-          <div className="flex max-w-3xl flex-col space-y-16">
+        <div className="md:pl-6 md:border-l md:border-zinc-100 md:dark:border-zinc-700/40">
+          <div className="flex flex-col space-y-16 max-w-3xl">
             {tests.map(test => (
               <Article
                 key={test.slug}

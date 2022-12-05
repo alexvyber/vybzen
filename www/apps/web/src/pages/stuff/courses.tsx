@@ -7,7 +7,7 @@ import { SimpleLayout } from "@/components/simple-layout"
 function ToolsSection({ children, ...props }) {
   return (
     <Section {...props}>
-      <ul role="list" className=" space-y-16">
+      <ul role="list" className="space-y-16">
         {children}
       </ul>
     </Section>

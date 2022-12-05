@@ -19,14 +19,14 @@ const myLoader = ({ src }) => {
 
 function Book({ title, href, imageSrc, children }) {
   return (
-    <Card as="li" className="w-full justify-around sm:w-5/12">
-      <Card.Title as="h3" href={href} className=" text-lg" target="_blank">
+    <Card as="li" className="justify-around w-full sm:w-5/12">
+      <Card.Title as="h3" href={href} className="text-lg" target="_blank">
         {title}
       </Card.Title>
-      <div className="aspect-w-3 aspect-h-4 mt-3 h-auto w-full">
+      <div className="mt-3 w-full h-auto aspect-w-3 aspect-h-4">
         <Image
           loader={myLoader}
-          className=" z-10  h-full w-full rounded-xl object-cover"
+          className="object-cover z-10 w-full h-full rounded-xl"
           src={imageSrc}
           // alt="Image Description"
           width={300}
@@ -197,7 +197,7 @@ export default function Uses() {
           <h2 className="mb-10 text-xl font-medium text-zinc-800 dark:text-zinc-100">
             В Работе
           </h2>
-          <main className="space-y-20 ">
+          <main className="space-y-20">
             {books.map(collection => {
               const booksToRender = collection.books.filter(
                 book => book.status === "working",

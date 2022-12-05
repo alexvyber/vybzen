@@ -12,7 +12,7 @@ import Image from "next/image"
 function ToolsSection({ children, ...props }) {
   return (
     <Section {...props}>
-      <ul role="list" className=" space-y-16">
+      <ul role="list" className="space-y-16">
         {children}
       </ul>
     </Section>
@@ -23,12 +23,12 @@ function Tool({ title, href, children, logoIcon }) {
   return (
     <Card as="li">
       <Card.Title as="h3" href={href} target="_blank">
-        <div className="align-center flex items-center">
+        <div className="flex items-center align-center">
           <Image
             src={logoIcon}
             width={28}
             height={28}
-            className="z-10 mr-3 inline h-6 w-6"
+            className="inline z-10 mr-3 w-6 h-6"
           />
           {title}
         </div>

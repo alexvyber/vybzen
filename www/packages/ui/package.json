@@ -32,5 +32,9 @@
     "tsconfig": "*",
     "tsup": "^6.5.0",
     "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "next": "^13.0.6"
   }
 }

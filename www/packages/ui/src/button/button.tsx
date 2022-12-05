@@ -1,13 +1,12 @@
-import type { VariantProps } from "class-variance-authority"
-import { cva } from "class-variance-authority"
+import { cva, VariantProps } from "class-variance-authority"
 import clsx from "clsx"
 
 // --
 
-const className =
-  "inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none"
+export const className =
+  "inline-flex gap-2 justify-center items-center py-2 px-3 text-sm rounded-md transition active:transition-none outline-offset-2"
 
-const buttonStyles = cva(className, {
+export const buttonStyles = cva(className, {
   variants: {
     intent: {
       primary:
@@ -28,24 +27,23 @@ const buttonStyles = cva(className, {
 
 // --
 
-export interface Props extends VariantProps<typeof buttonStyles> {
-  href: string
-  className: string
-}
+export interface Props
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonStyles> {}
 
 export const Button = ({
   intent,
   children,
   rounded,
-  href,
   className,
-}: React.PropsWithChildren<Props>) => {
+  ...props
+}: Props) => {
   return (
-    <a
-      href={href}
+    <button
       className={clsx(buttonStyles({ intent, rounded }), className)}
+      {...props}
     >
       {children}
-    </a>
+    </button>
   )
 }

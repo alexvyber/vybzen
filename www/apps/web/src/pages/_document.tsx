@@ -57,7 +57,7 @@ class MyDocument extends Document {
         <Head>
           <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         </Head>
-        <body className="flex h-full flex-col bg-slate-50 dark:bg-black">
+        <body className="flex flex-col h-full dark:bg-black bg-slate-50">
           <Main />
           <NextScript />
         </body>

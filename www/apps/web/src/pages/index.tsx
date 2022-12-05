@@ -3,7 +3,6 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Button } from "@/components/button"
 import { Card } from "@/components/card"
 import { Container } from "@/components/container"
 import { GitHubIcon, LinkedInIcon } from "@/components/social-icons"
@@ -13,6 +12,7 @@ import image2 from "@/images/photos/image-2.jpg"
 import image3 from "@/images/photos/image-3.jpg"
 import image4 from "@/images/photos/image-4.jpg"
 import image5 from "@/images/photos/image-5.jpg"
+import { ButtonLink, Button } from "ui"
 // import { generateRssFeed } from '@/lib/generate-rss-feed'
 import { formatDate } from "@/lib/format-date"
 import { getAllArticles } from "@/lib/get-all-articles"
@@ -203,10 +203,15 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" intent="secondary" className="group mt-6 w-full">
+      <ButtonLink
+        href="/some"
+        intent="secondary"
+        className="group mt-6 w-full"
+        as={Link}
+      >
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      </ButtonLink>
     </div>
   )
 }
