@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  nextjs:
+    container_name: dsh-nextjs
+    hostname: nextjs
+    # env_file: ../config/web/.env
+    environment:
+      - PUBLIC_API_URL=http://localhost:1337
+      - SERVER_API_URL=https://dshdelivery.com/backend
+    build:
+      context: ./apps/web/
+      dockerfile: Dockerfile
+      args:
+        PUBLIC_API_URL: http://localhost:1337
+        SERVER_API_URL: https://dshdelivery.com/backend
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+      - 9000:9000
+    networks:
+      - dsh-network
+    volumes:
+      # - ./client/apps/web/src:/app/apps/web/src
+      # - ./client/apps/web/public:/app/apps/web/public
+      # - ./client/apps/web/tailwind.config.cjs:/app/apps/web/tailwind.config.cjs
+      # - ./client/apps/web/next.config.cjs:/app/apps/web/next.config.cjs
+      # - ./client/apps/web/postcss.config.cjs:/app/apps/web/postcss.config.cjs
+      # - ./client/apps/web/tsconfig.json:/app/apps/web/tsconfig.json
+      - ./apps/web:/app/apps/web
+      - ./packages:/app/client/packages
+
+networks:
+  dsh-network:
+    external: true

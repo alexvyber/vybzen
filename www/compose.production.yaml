@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  nextjs:
+    container_name: vyber-nextjs
+    hostname: nextjs
+    # env_file: ../config/web/.env.production
+
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile.production
+
+    restart: always
+    ports:
+      - 3000:3000
+
+    # networks:
+    #   - dsh-network
+#
+# networks:
+#   dsh-network:
+#     external: true
