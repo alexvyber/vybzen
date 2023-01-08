@@ -35,10 +35,10 @@ const navLinks = [
     href: "/stuff",
     links: [
       { title: "Софт и Железо", href: "/uses", base: "/stuff" },
-      // { title: 'TODO', href: '/TODO', base: '/stuff' },
+      // { title: "TODO", href: "/TODO", base: "/stuff" },
       // { title: 'Софт', href: '/software', base: '/stuff' },
       { title: "Блогеры", href: "/bloggers", base: "/stuff" },
-      // { title: 'Курсы', href: '/courses', base: '/stuff' },
+      // { title: "Курсы", href: "/courses", base: "/stuff" },
       { title: "Книги", href: "/books", base: "/stuff" },
     ],
   },

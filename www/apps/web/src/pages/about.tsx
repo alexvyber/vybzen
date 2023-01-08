@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Container } from "@/components/container"
-import { GitHubIcon, LinkedInIcon } from "@/components/social-icons"
+import { GitHubIcon, LinkedInIcon } from "icons"
 import portraitImage from "@/images/avatar.jpg"
 import React from "react"
 
@@ -24,9 +24,9 @@ function SocialLink({
     <li className={clsx(className, "flex")}>
       <Link
         href={href}
-        className="flex text-sm font-medium transition hover:text-orange-500 group text-zinc-800 dark:text-zinc-200 dark:hover:text-orange-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-orange-500 dark:text-zinc-200 dark:hover:text-orange-500"
       >
-        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-orange-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-orange-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -52,20 +52,20 @@ export default function About() {
         <meta name="description" content="Эбаут - Алексей Соколов" />
       </Head>
       <Container className="mt-16 sm:mt-32">
-        <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12 lg:grid-rows-[auto_1fr]">
+        <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
-            <div className="px-2.5 max-w-xs lg:max-w-none">
+            <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="object-cover rounded-2xl rotate-3 aspect-square bg-zinc-100 dark:bg-zinc-800"
+                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>
 
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-zinc-800 dark:text-zinc-100">
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
               Привет! Меня зовут Соколов Алексей. Пишу софт и делаю графику.
             </h1>
 
@@ -102,7 +102,7 @@ export default function About() {
               <SocialLink
                 href="mailto:alexvyber@gmail.com"
                 icon={MailIcon}
-                className="pt-8 mt-8 border-t border-zinc-100 dark:border-zinc-700/40"
+                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
                 alexvyber@gmail.com
               </SocialLink>

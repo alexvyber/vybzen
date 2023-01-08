@@ -2,6 +2,7 @@ import Head from "next/head"
 
 import { SimpleLayout } from "@/components/simple-layout"
 import { Octokit } from "octokit"
+import { getAllArticles } from "@/lib/get-all-articles"
 
 function Commits({ commits }) {
   return (
@@ -9,23 +10,23 @@ function Commits({ commits }) {
       {commits.map(commit => (
         <li
           key={commit.sha}
-          className="relative py-5 px-4 bg-white rounded-xl focus-within:ring-2 focus-within:ring-inset focus-within:ring-orange-600 hover:bg-orange-50 dark:bg-zinc-900 dark:hover:bg-zinc-50/5"
+          className="relative rounded-xl bg-white py-5 px-4  focus-within:ring-2 focus-within:ring-inset focus-within:ring-orange-600 hover:bg-orange-50 dark:bg-zinc-900 dark:hover:bg-zinc-50/5"
         >
           <div className="flex justify-between space-x-3">
-            <div className="flex-1 min-w-0">
+            <div className="min-w-0 flex-1">
               <a href={commit.html_url} className="block focus:outline-none">
                 <span className="absolute inset-0" aria-hidden="true" />
                 <p className="text-sm font-medium text-gray-900 dark:text-zinc-200">
                   {commit.commit.message}
                 </p>
-                <p className="mt-1 text-sm text-orange-500 truncate">
+                <p className="mt-1 truncate text-sm text-orange-500">
                   {commit.sha.slice(0, 8)}
                 </p>
               </a>
             </div>
             <time
               dateTime={commit.commit.committer.date}
-              className="flex-shrink-0 text-sm whitespace-nowrap text-zinc-600 dark:text-zinc-300"
+              className="flex-shrink-0 whitespace-nowrap text-sm text-zinc-600 dark:text-zinc-300"
             >
               {new Date(commit.commit.committer.date).toLocaleDateString(
                 "ru-RU",
@@ -43,7 +44,48 @@ function Commits({ commits }) {
   )
 }
 
-export default function Days({ commits }) {
+function Articles({ articles }) {
+  return (
+    <ul role="list">
+      {articles.map(article => (
+        <li
+          key={article.slug}
+          className="relative rounded-xl bg-white py-5 px-4 focus-within:ring-2 focus-within:ring-inset focus-within:ring-orange-600 hover:bg-orange-50 dark:bg-zinc-900 dark:hover:bg-zinc-50/5"
+        >
+          <div className="flex justify-between space-x-3">
+            <div className="min-w-0 flex-1">
+              <a
+                href={"/articles/" + article.slug}
+                className="block focus:outline-none"
+              >
+                <span className="absolute inset-0" aria-hidden="true" />
+                <h3 className="flex justify-between text-sm font-medium text-gray-900 dark:text-zinc-200">
+                  {article.title}
+                  <time
+                    dateTime={article.date}
+                    className="flex-shrink-0 whitespace-nowrap text-sm text-zinc-600 dark:text-zinc-300"
+                  >
+                    {new Date(article.date).toLocaleDateString("ru-RU", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                </h3>
+                <p className="mt-1 text-sm text-neutral-600">
+                  {article.description}
+                </p>
+              </a>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export default function Days({ commits, articles }) {
+  console.log("🚀 ~ Days ~ articles", articles)
   return (
     <>
       <Head>
@@ -54,8 +96,19 @@ export default function Days({ commits }) {
         title="1000 дней кода - челлендж такой..."
         intro="Идея в том, чтобы почти 3 года подряд писать год и учиться писать код."
       >
-        <main className="max-w-2xl">
-          <Commits commits={commits} />
+        <main className="flex flex-col-reverse gap-10 md:flex-row">
+          <div className="w-full">
+            <h2 className="px-4 pb-3  text-xl font-medium dark:text-white">
+              1000 days of coding
+            </h2>
+            <Commits commits={commits} />
+          </div>
+          <div className="w-full">
+            <h2 className="px-4 pb-3  text-xl font-medium dark:text-white">
+              1000 days of posting
+            </h2>
+            <Articles articles={articles} />
+          </div>
         </main>
       </SimpleLayout>
     </>
@@ -100,6 +153,9 @@ export const getStaticProps = async () => {
     revalidate: 60 * 60 * 2,
     props: {
       commits,
+      articles: (await getAllArticles())
+        .map(({ component, ...meta }) => meta)
+        .slice(0, 30),
     },
   }
 }
