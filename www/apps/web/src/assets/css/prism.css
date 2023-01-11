@@ -1,5 +1,5 @@
-pre[class*='language-'] {
-  color: theme('colors.slate.700');
+pre[class*="language-"] {
+  color: theme("colors.neutral.700");
 }
 
 .token.tag,
@@ -8,7 +8,7 @@ pre[class*='language-'] {
 .token.selector .class,
 .token.selector.class,
 .token.function {
-  color: theme('colors.orange.500');
+  color: theme("colors.orange.500");
 }
 
 .token.attr-name,
@@ -16,33 +16,37 @@ pre[class*='language-'] {
 .token.rule,
 .token.pseudo-class,
 .token.important {
-  color: theme('colors.sky.500');
+  color: theme("colors.sky.500");
 }
 
 .token.module {
-  color: theme('colors.orange.500');
+  color: theme("colors.orange.500");
+}
+
+.token.class,
+.token.property {
+  color: theme("colors.red.500");
 }
 
 .token.attr-value,
 .token.class,
 .token.string,
 .token.property {
-  color: theme('colors.lime.600');
+  color: theme("colors.lime.600");
 }
 
 .token.punctuation,
 .token.attr-equals {
-  color: theme('colors.slate.500');
+  color: theme("colors.slate.500");
 }
 
 .token.unit,
 .language-css .token.function {
-  color: theme('colors.blue.500');
+  color: theme("colors.blue.500");
 }
 
 .token.comment,
 .token.operator,
 .token.combinator {
-  color: theme('colors.slate.400');
-  font-style: italic;
+  color: theme("colors.slate.400");
 }

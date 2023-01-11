@@ -94,11 +94,14 @@ const config = {
 
           // Base
           color: "var(--tw-prose-body)",
+
           lineHeight: theme("lineHeight.7"),
+
           "> *": {
             marginTop: theme("spacing.10"),
             marginBottom: theme("spacing.10"),
           },
+
           p: {
             marginTop: theme("spacing.4"),
             marginBottom: theme("spacing.4"),
@@ -109,18 +112,21 @@ const config = {
             color: "var(--tw-prose-headings)",
             fontWeight: theme("fontWeight.semibold"),
           },
+
           h2: {
             fontSize: theme("fontSize.xl")[0],
             lineHeight: theme("lineHeight.7"),
             marginTop: theme("spacing.20"),
             marginBottom: theme("spacing.4"),
           },
+
           h3: {
             fontSize: theme("fontSize.base")[0],
             lineHeight: theme("lineHeight.7"),
             marginTop: theme("spacing.16"),
             marginBottom: theme("spacing.4"),
           },
+
           ":is(h2, h3) + *": {
             marginTop: 0,
           },
@@ -140,14 +146,17 @@ const config = {
             transitionDuration: theme("transitionDuration.150"),
             transitionTimingFunction: theme("transitionTimingFunction.in-out"),
           },
+
           "a:hover": {
             color: "var(--tw-prose-links-hover)",
             textDecorationColor: "var(--tw-prose-underline-hover)",
           },
+
           strong: {
             color: "var(--tw-prose-bold)",
             fontWeight: theme("fontWeight.semibold"),
           },
+
           code: {
             display: "inline-block",
             color: "var(--tw-prose-code)",
@@ -158,9 +167,11 @@ const config = {
             paddingLeft: theme("spacing.1"),
             paddingRight: theme("spacing.1"),
           },
+
           "a code": {
             color: "inherit",
           },
+
           ":is(h2, h3) code": {
             fontWeight: theme("fontWeight.bold"),
           },
@@ -180,6 +191,7 @@ const config = {
             lineHeight: theme("lineHeight.6"),
             marginTop: theme("spacing.3"),
           },
+
           "figcaption > p": {
             margin: 0,
           },
@@ -188,31 +200,39 @@ const config = {
           ul: {
             listStyleType: "disc",
           },
+
           ol: {
             listStyleType: "decimal",
           },
+
           "ul, ol": {
             paddingLeft: theme("spacing.6"),
           },
+
           li: {
             marginTop: theme("spacing.1.5"),
             marginBottom: theme("spacing.1.5"),
             paddingLeft: theme("spacing[1]"),
           },
+
           "li::marker": {
             fontSize: theme("fontSize.sm")[0],
             fontWeight: theme("fontWeight.semibold"),
           },
+
           "ol > li::marker": {
             color: "var(--tw-prose-counters)",
           },
+
           "ul > li::marker": {
             color: "var(--tw-prose-bullets)",
           },
+
           "li :is(ol, ul)": {
             marginTop: theme("spacing.4"),
             marginBottom: theme("spacing.4"),
           },
+
           "li :is(li, p)": {
             marginTop: theme("spacing.3"),
             marginBottom: theme("spacing.3"),
@@ -224,12 +244,14 @@ const config = {
             fontSize: theme("fontSize.sm")[0],
             fontWeight: theme("fontWeight.medium"),
             backgroundColor: "var(--tw-prose-pre-bg)",
-            borderRadius: theme("borderRadius.3xl"),
-            padding: theme("spacing.8"),
+            borderRadius: theme("borderRadius.2xl"),
+            padding: theme("spacing.5"),
             overflowX: "auto",
             border: "1px solid",
             borderColor: "var(--tw-prose-pre-border)",
+            lineHeight: 1.5,
           },
+
           "pre code": {
             display: "inline",
             color: "inherit",
@@ -259,49 +281,67 @@ const config = {
             textAlign: "left",
             fontSize: theme("fontSize.sm")[0],
           },
+
           thead: {
             borderBottomWidth: "1px",
             borderBottomColor: "var(--tw-prose-th-borders)",
           },
+
           "thead th": {
             color: "var(--tw-prose-headings)",
             fontWeight: theme("fontWeight.semibold"),
             verticalAlign: "bottom",
             paddingBottom: theme("spacing.2"),
           },
+
           "thead th:not(:first-child)": {
             paddingLeft: theme("spacing.2"),
           },
+
           "thead th:not(:last-child)": {
             paddingRight: theme("spacing.2"),
           },
+
           "tbody tr": {
             borderBottomWidth: "1px",
             borderBottomColor: "var(--tw-prose-td-borders)",
           },
+
           "tbody tr:last-child": {
             borderBottomWidth: 0,
           },
+
           "tbody td": {
             verticalAlign: "baseline",
           },
+
           tfoot: {
             borderTopWidth: "1px",
             borderTopColor: "var(--tw-prose-th-borders)",
           },
+
           "tfoot td": {
             verticalAlign: "top",
           },
+
           ":is(tbody, tfoot) td": {
             paddingTop: theme("spacing.2"),
             paddingBottom: theme("spacing.2"),
           },
+
           ":is(tbody, tfoot) td:not(:first-child)": {
             paddingLeft: theme("spacing.2"),
           },
+
           ":is(tbody, tfoot) td:not(:last-child)": {
             paddingRight: theme("spacing.2"),
           },
+
+          // ".title-file": {
+          //   marginBottom: "-55px",
+
+          //   backgroundColor: theme("colors.zinc.200"),
+          // },
         },
       },
     }),

@@ -7,13 +7,13 @@ services:
     # env_file: ../config/web/.env
     environment:
       - PUBLIC_API_URL=http://localhost:1337
-      - SERVER_API_URL=https://dshdelivery.com/backend
+      # - SERVER_API_URL=https://
     build:
       context: ./apps/web/
       dockerfile: Dockerfile
       args:
         PUBLIC_API_URL: http://localhost:1337
-        SERVER_API_URL: https://dshdelivery.com/backend
+        # SERVER_API_URL: https://
     restart: unless-stopped
     ports:
       - 3000:3000
